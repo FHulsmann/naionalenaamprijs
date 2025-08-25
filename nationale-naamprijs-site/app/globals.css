@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nnp-dark: #3F3F40;
+  --nnp-red: #E73331;
+  --nnp-gold: #FFB800;
+}
+
+body { color: #111827; background: #ffffff; }

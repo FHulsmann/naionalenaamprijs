@@ -4,110 +4,147 @@
   <meta charset="UTF-8">
   <title>Nationale Naamprijs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="De Nationale Naamprijs bekroont de beste namen van Nederland. Schrijf je bedrijfsnaam, merknaam, rebranding of horecanaam in.">
+  <meta name="description" content="De Nationale Naamprijs bekroont sterke namen. Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding en Horeca Naam van het Jaar.">
 
   <style>
-    /* Basisstijl in jouw kleurenpalet */
     :root {
-      --np-red-dark: #A92321;
-      --np-red: #E73331;
-      --np-grey-dark: #3F3F40;
-      --np-grey-mid: #8B8B8C;
-      --np-grey-light: #D0D0D0;
-      --np-bg: #EDECE8;
-      --np-white: #ffffff;
-      --radius-card: 18px;
+      --nnp-navy: #021B3A;
+      --nnp-navy-soft: #06254C;
+      --nnp-teal: #00A4B8;
+      --nnp-orange: #FF8A1F;
+      --nnp-orange-deep: #FF5C00;
+      --nnp-offwhite: #F7F7FA;
+      --nnp-text-soft: #D1D4E0;
+      --card-radius: 18px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.35);
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      color: var(--np-grey-dark);
-      background: radial-gradient(circle at top left, #f5e5e2 0, var(--np-bg) 32%, #f7f7f7 100%);
+      color: var(--nnp-offwhite);
+      background:
+        radial-gradient(circle at 0 0, rgba(0,164,184,0.25), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(255,138,31,0.25), transparent 55%),
+        linear-gradient(160deg, var(--nnp-navy) 0%, var(--nnp-navy-soft) 55%, #030816 100%);
     }
 
-    header, main, footer {
-      max-width: 980px;
+    .page {
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 0 18px;
+      padding: 0 18px 40px;
+    }
+
+    a {
+      color: inherit;
     }
 
     /* Hero */
 
-    .site-header {
-      padding: 36px 0 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      background: conic-gradient(from 160deg, var(--np-red) 0 40%, var(--np-red-dark) 40% 75%, var(--np-grey-dark) 75% 100%);
-    }
-
-    .logo-text {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--np-grey-mid);
-    }
-
-    .edition-tag {
-      font-size: 0.85rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--np-grey-light);
-      background: rgba(255,255,255,0.6);
-      backdrop-filter: blur(4px);
-    }
-
     .hero {
-      padding: 18px 0 40px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-      gap: 32px;
-      align-items: center;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      margin-bottom: 24px;
     }
 
-    .hero h1 {
-      font-size: 2.6rem;
+    .hero-banner {
+      position: relative;
+      border-radius: 0 0 32px 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: radial-gradient(circle at 10% 0, rgba(0,164,184,0.4), transparent 55%), #02435A;
+    }
+
+    .hero-banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(2,27,58,0.90), rgba(2,27,58,0.45)),
+        radial-gradient(circle at 0 0, rgba(255,255,255,0.08), transparent 55%);
+      mix-blend-mode: multiply;
+      z-index: 1;
+    }
+
+    .hero-banner img.banner {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.2);
+    }
+
+    @media (min-width: 900px) {
+      .hero-banner img.banner {
+        height: 320px;
+      }
+    }
+
+    .hero-inner {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px 24px 26px;
+      background: linear-gradient(to top, rgba(2, 11, 32, 0.85) 0, transparent 55%);
+    }
+
+    .hero-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .hero-logo-row img.logo {
+      height: 52px;
+      width: auto;
+    }
+
+    .hero-badge {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(2, 21, 55, 0.75);
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
       letter-spacing: -0.04em;
-      margin: 0 0 8px;
-      color: var(--np-grey-dark);
+      margin: 4px 0 6px;
     }
 
     .hero-sub {
-      font-size: 1.05rem;
-      max-width: 560px;
-      margin: 0 0 10px;
+      font-size: 1.02rem;
+      max-width: 520px;
+      color: var(--nnp-text-soft);
+      margin: 0 0 12px;
     }
 
     .hero-meta {
-      font-size: 0.9rem;
-      color: var(--np-grey-mid);
-      margin-bottom: 16px;
+      font-size: 0.86rem;
+      color: var(--nnp-text-soft);
+      margin-bottom: 14px;
     }
 
     .hero-cta-row {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       gap: 10px;
-      margin-bottom: 8px;
+      align-items: center;
     }
 
     .btn-primary {
@@ -117,126 +154,111 @@
       padding: 10px 22px;
       border-radius: 999px;
       border: none;
-      background: linear-gradient(135deg, var(--np-red-dark), var(--np-red));
-      color: var(--np-white);
+      background: linear-gradient(135deg, var(--nnp-orange-deep), var(--nnp-orange));
+      color: #1A1020;
       font-size: 0.95rem;
+      font-weight: 600;
       text-decoration: none;
       cursor: pointer;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.45);
     }
 
     .hero-note {
       font-size: 0.85rem;
-      color: var(--np-grey-mid);
+      color: var(--nnp-text-soft);
     }
 
-    .hero-card {
-      background: rgba(255,255,255,0.92);
-      border-radius: var(--radius-card);
-      border: 1px solid rgba(0,0,0,0.04);
-      padding: 18px 18px 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    /* Secties algemeen */
+
+    .section {
+      padding: 32px 0 6px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    .hero-card-title {
-      font-size: 0.9rem;
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      margin: 0 0 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .section p,
+    .section li {
+      font-size: 0.97rem;
+      line-height: 1.6;
+      color: var(--nnp-offwhite);
+    }
+
+    .section p.small,
+    .section li.small {
+      font-size: 0.86rem;
+      color: var(--nnp-text-soft);
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Categorieën */
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 720px) {
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .category-card {
+      background: rgba(5, 26, 68, 0.9);
+      border-radius: var(--card-radius);
+      padding: 14px 16px 16px;
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    }
+
+    .category-label {
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: var(--np-grey-mid);
-      margin-bottom: 6px;
-    }
-
-    .hero-card p {
-      font-size: 0.9rem;
-      margin: 0;
-    }
-
-    /* Secties */
-
-    section {
-      padding: 32px 0;
-      border-top: 1px solid rgba(0,0,0,0.04);
-    }
-
-    section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      letter-spacing: -0.01em;
-      color: var(--np-grey-dark);
-    }
-
-    section p, section li {
-      font-size: 0.97rem;
-      line-height: 1.55;
-    }
-
-    .two-columns {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 24px;
-    }
-
-    @media (max-width: 780px) {
-      .hero {
-        grid-template-columns: minmax(0,1fr);
-      }
-      .two-columns {
-        grid-template-columns: minmax(0,1fr);
-      }
-      .site-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .hero h1 {
-        font-size: 2.1rem;
-      }
-    }
-
-    .list-clean {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .list-clean li {
+      color: var(--nnp-text-soft);
       margin-bottom: 4px;
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 11px;
-      border-radius: 999px;
-      border: 1px solid var(--np-grey-light);
-      background: rgba(255,255,255,0.9);
-      font-size: 0.8rem;
-      margin: 0 6px 6px 0;
-      white-space: nowrap;
+    .category-title {
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: var(--nnp-offwhite);
     }
 
-    .pill-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      margin-right: 6px;
-      background: var(--np-red-dark);
+    .category-card p {
+      font-size: 0.9rem;
+      color: var(--nnp-text-soft);
+      margin: 0;
     }
 
-    .highlight-box {
-      background: rgba(255,255,255,0.9);
-      border-radius: 14px;
-      padding: 14px 16px;
-      border: 1px solid rgba(0,0,0,0.04);
-      font-size: 0.86rem;
-      color: var(--np-grey-mid);
-      margin-top: 8px;
-    }
+    /* Stappen */
 
     .step-list {
-      counter-reset: step;
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 10px 0 0;
+      counter-reset: step;
     }
 
     .step-list li {
@@ -251,60 +273,32 @@
       content: counter(step);
       position: absolute;
       left: 0;
-      top: 2px;
+      top: 3px;
       width: 18px;
       height: 18px;
       border-radius: 999px;
-      border: 1px solid var(--np-grey-light);
+      border: 1px solid rgba(255,255,255,0.4);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.75rem;
-      color: var(--np-grey-mid);
-      background: rgba(255,255,255,0.8);
-    }
-
-    .small {
-      font-size: 0.85rem;
-      color: var(--np-grey-mid);
+      font-size: 0.74rem;
+      color: var(--nnp-text-soft);
+      background: rgba(3, 15, 40, 0.9);
     }
 
     /* Formulier */
 
     form {
-      background: rgba(255,255,255,0.95);
-      border-radius: var(--radius-card);
-      padding: 20px 20px 18px;
-      border: 1px solid rgba(0,0,0,0.04);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+      margin-top: 8px;
+      background: rgba(6, 27, 70, 0.96);
+      border-radius: var(--card-radius);
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.45);
     }
 
     .field {
       margin-bottom: 14px;
-    }
-
-    label {
-      display: block;
-      font-size: 0.88rem;
-      margin-bottom: 3px;
-      color: var(--np-grey-dark);
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 8px 10px;
-      border-radius: 6px;
-      border: 1px solid var(--np-grey-light);
-      font: inherit;
-      background: #ffffff;
-    }
-
-    textarea {
-      min-height: 90px;
-      resize: vertical;
     }
 
     .field-inline {
@@ -317,10 +311,40 @@
       margin-bottom: 0;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       .field-inline {
         flex-direction: column;
       }
+    }
+
+    label {
+      display: block;
+      font-size: 0.86rem;
+      margin-bottom: 3px;
+      color: var(--nnp-text-soft);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.26);
+      font: inherit;
+      background: rgba(2, 10, 32, 0.92);
+      color: var(--nnp-offwhite);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(209,212,224,0.7);
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
     }
 
     .field-checkbox {
@@ -328,6 +352,7 @@
       align-items: flex-start;
       gap: 8px;
       font-size: 0.86rem;
+      color: var(--nnp-text-soft);
     }
 
     .field-checkbox input[type="checkbox"] {
@@ -345,10 +370,16 @@
       padding: 9px 22px;
       border-radius: 999px;
       border: none;
-      background: linear-gradient(135deg, var(--np-red-dark), var(--np-red));
-      color: #ffffff;
+      background: linear-gradient(135deg, var(--nnp-orange-deep), var(--nnp-orange));
+      color: #1A1020;
       font-size: 0.95rem;
+      font-weight: 600;
       cursor: pointer;
+    }
+
+    .small-note {
+      font-size: 0.8rem;
+      color: var(--nnp-text-soft);
     }
 
     /* Video */
@@ -358,15 +389,15 @@
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      border-radius: 16px;
+      border-radius: var(--card-radius);
       background: #000;
-      box-shadow: 0 12px 26px rgba(0,0,0,0.25);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.6);
+      margin-top: 12px;
     }
 
     .video-wrapper iframe {
       position: absolute;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       border: 0;
@@ -375,12 +406,14 @@
     /* Footer */
 
     footer {
-      padding: 26px 18px 40px;
-      border-top: 1px solid rgba(0,0,0,0.06);
-      font-size: 0.86rem;
-      color: var(--np-grey-mid);
-      background: rgba(255,255,255,0.85);
-      margin-top: 24px;
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.84rem;
+      color: var(--nnp-text-soft);
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     footer a {
@@ -392,199 +425,223 @@
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="logo-wrap">
-      <div class="logo-mark"></div>
-      <div class="logo-text">Nationale Naamprijs</div>
-    </div>
-    <div class="edition-tag">
-      Editie 2025
-    </div>
-  </header>
+  <div class="page">
 
-  <header class="hero">
-    <div>
-      <h1>Nationale Naamprijs</h1>
-      <p class="hero-sub">
-        De prijs voor namen die blijven hangen. Voor merken, bedrijven en horecazaken die durven kiezen.
-      </p>
-      <p class="hero-meta">
-        Inzenden kan in vier categorieën. Eén naam per inzending.
-      </p>
-      <div class="hero-cta-row">
-        <a href="#inschrijven" class="btn-primary">Schrijf je naam in</a>
+    <header class="hero" id="top">
+      <div class="hero-banner">
+        <!-- Bannerbeeld: upload in je repo als banner-nnp.png -->
+        <img src="banner-nnp.png" alt="Nationale Naamprijs" class="banner">
+        <div class="hero-inner">
+          <div class="hero-logo-row">
+            <!-- Logo: upload in je repo als logo-nnp.svg -->
+            <img src="logo-nnp.svg" alt="Nationale Naamprijs logo" class="logo">
+            <span class="hero-badge">Editie 2025</span>
+          </div>
+          <h1 class="hero-title">Nationale Naamprijs</h1>
+          <p class="hero-sub">
+            De prijs voor namen die blijven hangen. Voor merken, bedrijven en horecazaken die durven kiezen.
+          </p>
+          <p class="hero-meta">
+            Inzenden in vier categorieën. Eén naam per inzending.
+          </p>
+          <div class="hero-cta-row">
+            <a href="#inschrijven" class="btn-primary">Schrijf je naam in</a>
+            <span class="hero-note">
+              Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding, Horeca Naam van het Jaar.
+            </span>
+          </div>
+        </div>
       </div>
-      <p class="hero-note">
-        Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding, Horeca Naam van het Jaar.
-      </p>
-    </div>
+    </header>
 
-    <aside class="hero-card">
-      <div class="hero-card-title">Waar let de jury op</div>
-      <p>
-        Strategie, taal en praktijk. Klopt de naam bij de positionering, werkt hij voor de mensen die je wilt bereiken, en blijft hij in het hoofd hangen.
-      </p>
-    </aside>
-  </header>
+    <main>
 
-  <main>
-
-    <section id="over">
-      <div class="two-columns">
-        <div>
-          <h2>Waarom deze prijs nodig is</h2>
+      <section class="section" id="over">
+        <div class="section-inner stack">
+          <h2>Waarom deze prijs er is</h2>
           <p>
-            Namen sturen keuzes. In een paar letters maak je duidelijk wat mensen mogen verwachten. De Nationale Naamprijs zet namen in het licht die daar bewust en goed over zijn gekozen.
+            Namen sturen keuzes. In een paar letters maak je duidelijk wat mensen mogen verwachten. De Nationale Naamprijs zet namen in het licht die bewust zijn gekozen en goed werken in de praktijk.
           </p>
           <p>
-            Geen theoretische oefeningen maar namen die in gebruik zijn. In winkels, op gevels, in apps, op vrachtwagens en visitekaartjes.
+            Het gaat om echte namen. Namen op gevels, verpakkingen, apps en websites. Geen theoretische voorstellen in een la.
           </p>
         </div>
-        <div>
+      </section>
+
+      <section class="section" id="voor-wie">
+        <div class="section-inner stack">
           <h2>Voor wie je instuurt</h2>
-          <ul class="list-clean">
-            <li>• Ondernemers die een naam lanceerden waar ze achter staan</li>
-            <li>• Branding en designbureaus die namen maken voor klanten</li>
-            <li>• Organisaties die recent zijn gerebrand</li>
-          </ul>
-          <div class="highlight-box">
-            Je mag eigen werk insturen of namens een opdrachtgever. Zorg dat de naam in gebruik is of concreet op de planning staat.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="categorieen">
-      <div class="two-columns">
-        <div>
-          <h2>Categorieën</h2>
-          <p>Kies bij je inzending één categorie. Twijfel je, kies dan waar de naam nu het meest voor wordt gebruikt.</p>
-          <div>
-            <span class="pill"><span class="pill-dot"></span>Beste Bedrijfsnaam</span>
-            <span class="pill"><span class="pill-dot"></span>Mooiste Merknaam</span>
-            <span class="pill"><span class="pill-dot"></span>Sterkste Rebranding</span>
-            <span class="pill"><span class="pill-dot"></span>Horeca Naam van het Jaar</span>
-          </div>
-        </div>
-        <div>
-          <h2>Jury</h2>
-          <p class="small">
-            De jury bestaat uit mensen uit merkstrategie, taal en ontwerp. Zij beoordelen onafhankelijk en kijken naar:
+          <p>
+            Je kunt inzenden als ondernemer, als bureau of namens een organisatie:
           </p>
-          <ul class="list-clean small">
-            <li>• Relevantie voor de doelgroep</li>
-            <li>• Originaliteit in een drukke markt</li>
-            <li>• Klank, schrijfbaarheid en onthoudbaarheid</li>
-            <li>• Hoe de naam werkt in de praktijk</li>
+          <ul>
+            <li>Ondernemers met een naam waar ze bewust voor hebben gekozen</li>
+            <li>Branding en designbureaus die namen maken voor klanten</li>
+            <li>Organisaties die recent zijn gerebrand</li>
           </ul>
+          <p class="small">
+            Je mag eigen werk insturen of namens een opdrachtgever. Zorg dat de naam in gebruik is of concreet op de planning staat.
+          </p>
         </div>
+      </section>
+
+      <section class="section" id="categorieen">
+        <div class="section-inner">
+          <h2>Categorieën</h2>
+          <p>
+            Kies bij je inzending één categorie. Twijfel je, kies dan waar de naam nu het meest voor wordt gebruikt.
+          </p>
+
+          <div class="category-grid">
+            <article class="category-card">
+              <div class="category-label">Categorie 1</div>
+              <div class="category-title">Beste Bedrijfsnaam</div>
+              <p>
+                Voor bedrijven waarvan de naam de essentie van de organisatie scherp neerzet. Herkenbaar, onderscheidend en passend bij de markt.
+              </p>
+            </article>
+
+            <article class="category-card">
+              <div class="category-label">Categorie 2</div>
+              <div class="category-title">Mooiste Merknaam</div>
+              <p>
+                Voor merknamen met een sterk eigen gezicht. Namen die een wereld oproepen en ruimte geven aan creatie en groei.
+              </p>
+            </article>
+
+            <article class="category-card">
+              <div class="category-label">Categorie 3</div>
+              <div class="category-title">Sterkste Rebranding</div>
+              <p>
+                Voor organisaties die een bestaande naam hebben vervangen en daarmee een volgende stap in hun verhaal zetten.
+              </p>
+            </article>
+
+            <article class="category-card">
+              <div class="category-label">Categorie 4</div>
+              <div class="category-title">Horeca Naam van het Jaar</div>
+              <p>
+                Voor horeca, cafés, restaurants en hotels waar de naam direct gevoel oproept en uitnodigt om binnen te stappen.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="hoe-werkt-het">
+        <div class="section-inner">
+          <h2>Hoe het werkt</h2>
+          <ul class="step-list">
+            <li>Je vult het formulier hieronder in en kiest één categorie.</li>
+            <li>We controleren of de inzending compleet is.</li>
+            <li>De jury maakt een shortlist per categorie.</li>
+            <li>De finalisten worden uitgenodigd voor de uitreiking.</li>
+          </ul>
+          <p class="small">
+            Insturen betekent dat je akkoord gaat met de voorwaarden en dat we de ingezonden namen mogen tonen in communicatie over de Nationale Naamprijs.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="inschrijven">
+        <div class="section-inner">
+          <h2>Inschrijfformulier</h2>
+          <p>
+            Je kunt meerdere namen insturen. Gebruik per naam een apart formulier.
+          </p>
+
+          <form name="naamprijs-inschrijving" method="POST" data-netlify="true" action="/bedankt.html" netlify-honeypot="extra-field">
+            <input type="hidden" name="form-name" value="naamprijs-inschrijving">
+            <p style="display:none;">
+              <label>Laat dit veld leeg: <input name="extra-field"></label>
+            </p>
+
+            <div class="field-inline">
+              <div class="field">
+                <label for="contact-naam">Naam contactpersoon</label>
+                <input type="text" id="contact-naam" name="contact-naam" required>
+              </div>
+              <div class="field">
+                <label for="organisatie">Bedrijf of organisatie</label>
+                <input type="text" id="organisatie" name="organisatie">
+              </div>
+            </div>
+
+            <div class="field-inline" style="margin-top:12px;">
+              <div class="field">
+                <label for="email">E mail</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="field">
+                <label for="categorie">Categorie</label>
+                <select id="categorie" name="categorie" required>
+                  <option value="">Kies een categorie</option>
+                  <option value="beste-bedrijfsnaam">Beste Bedrijfsnaam</option>
+                  <option value="mooiste-merknaam">Mooiste Merknaam</option>
+                  <option value="sterkste-rebranding">Sterkste Rebranding</option>
+                  <option value="horeca-naam-van-het-jaar">Horeca Naam van het Jaar</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="naam-inzending">De naam die je instuurt</label>
+              <input type="text" id="naam-inzending" name="naam-inzending" required>
+            </div>
+
+            <div class="field">
+              <label for="url">Link naar website, app of social</label>
+              <input type="text" id="url" name="url" placeholder="https://">
+            </div>
+
+            <div class="field">
+              <label for="toelichting">Korte toelichting op de naam</label>
+              <textarea id="toelichting" name="toelichting" placeholder="Waar staat de naam voor, hoe is hij gekozen, wat merk je in de praktijk"></textarea>
+            </div>
+
+            <div class="field-checkbox">
+              <input type="checkbox" id="akkoord-voorwaarden" name="akkoord-voorwaarden" required>
+              <label for="akkoord-voorwaarden">
+                Ik ga akkoord met de voorwaarden en geef toestemming om deze inzending te gebruiken in communicatie over de Nationale Naamprijs.
+              </label>
+            </div>
+
+            <div class="submit-row">
+              <button type="submit">Inzending versturen</button>
+              <span class="small-note">Je ontvangt een bevestiging op het opgegeven e mailadres.</span>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" id="video">
+        <div class="section-inner">
+          <h2>Video vorige editie</h2>
+          <p class="small">
+            Een indruk van de genomineerden, de zaal en de winnende namen.
+          </p>
+          <div class="video-wrapper">
+            <!-- Vervang VIDEO_ID door de echte YouTube of Vimeo id -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Nationale Naamprijs vorige editie" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>
+        Nationale Naamprijs is een initiatief van Namarama.
       </div>
-    </section>
-
-    <section id="hoe-werkt-het">
-      <h2>Hoe het werkt</h2>
-      <ul class="step-list">
-        <li>Je vult het formulier hieronder in en kiest één categorie.</li>
-        <li>We controleren of de inzending compleet is.</li>
-        <li>De jury maakt een shortlist per categorie.</li>
-        <li>De finalisten worden uitgenodigd voor de uitreiking.</li>
-      </ul>
-      <p class="small">
-        Insturen betekent dat je akkoord gaat met de voorwaarden en dat we de ingezonden namen mogen tonen in communicatie over de Nationale Naamprijs.
-      </p>
-    </section>
-
-    <section id="inschrijven">
-      <h2>Inschrijfformulier</h2>
-      <p>
-        Je kunt meerdere namen insturen. Gebruik per naam een apart formulier.
-      </p>
-
-      <form name="naamprijs-inschrijving" method="POST" data-netlify="true" action="/bedankt.html" netlify-honeypot="extra-field">
-        <input type="hidden" name="form-name" value="naamprijs-inschrijving">
-        <p class="hidden"><label>Laat dit veld leeg: <input name="extra-field"></label></p>
-
-        <div class="field-inline">
-          <div class="field">
-            <label for="contact-naam">Naam contactpersoon</label>
-            <input type="text" id="contact-naam" name="contact-naam" required>
-          </div>
-          <div class="field">
-            <label for="organisatie">Bedrijf of organisatie</label>
-            <input type="text" id="organisatie" name="organisatie">
-          </div>
-        </div>
-
-        <div class="field-inline" style="margin-top:12px;">
-          <div class="field">
-            <label for="email">E mail</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="field">
-            <label for="categorie">Categorie</label>
-            <select id="categorie" name="categorie" required>
-              <option value="">Kies een categorie</option>
-              <option value="beste-bedrijfsnaam">Beste Bedrijfsnaam</option>
-              <option value="mooiste-merknaam">Mooiste Merknaam</option>
-              <option value="sterkste-rebranding">Sterkste Rebranding</option>
-              <option value="horeca-naam-van-het-jaar">Horeca Naam van het Jaar</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="naam-inzending">De naam die je instuurt</label>
-          <input type="text" id="naam-inzending" name="naam-inzending" required>
-        </div>
-
-        <div class="field">
-          <label for="url">Link naar website, app of social</label>
-          <input type="text" id="url" name="url" placeholder="https://">
-        </div>
-
-        <div class="field">
-          <label for="toelichting">Korte toelichting op de naam</label>
-          <textarea id="toelichting" name="toelichting" placeholder="Waar staat de naam voor, hoe is hij gekozen, wat merk je in de praktijk"></textarea>
-        </div>
-
-        <div class="field-checkbox">
-          <input type="checkbox" id="akkoord-voorwaarden" name="akkoord-voorwaarden" required>
-          <label for="akkoord-voorwaarden">
-            Ik ga akkoord met de voorwaarden en geef toestemming om deze inzending te gebruiken in communicatie over de Nationale Naamprijs.
-          </label>
-        </div>
-
-        <div class="submit-row">
-          <button type="submit">Inzending versturen</button>
-          <span class="small">Je ontvangt een bevestiging op het opgegeven e mailadres.</span>
-        </div>
-      </form>
-    </section>
-
-    <section id="video">
-      <h2>Video vorige editie</h2>
-      <p class="small">
-        Een indruk van de genomineerden, de zaal en de winnende namen.
-      </p>
-      <div class="video-wrapper">
-        <!-- Vervang VIDEO_ID door de echte YouTube of Vimeo id -->
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Nationale Naamprijs vorige editie" allowfullscreen></iframe>
+      <div>
+        Contact: <a href="mailto:info@nationalenaamprijs.nl">info@nationalenaamprijs.nl</a>
       </div>
-    </section>
+      <div class="small" style="margin-top:6px;">
+        We gebruiken alleen functionele cookies en ingesloten video.
+      </div>
+    </footer>
 
-  </main>
-
-  <footer>
-    <div>
-      Nationale Naamprijs is een initiatief van Namarama.
-    </div>
-    <div>
-      Contact: <a href="mailto:info@nationalenaamprijs.nl">info@nationalenaamprijs.nl</a>
-    </div>
-    <div class="small" style="margin-top:6px;">
-      We gebruiken alleen functionele cookies en ingesloten video. Geen tracking.
-    </div>
-  </footer>
+  </div>
 
 </body>
 </html>

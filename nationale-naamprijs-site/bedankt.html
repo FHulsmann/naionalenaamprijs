@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     :root {
-      --np-red-dark: #A92321;
-      --np-red: #E73331;
-      --np-grey-dark: #3F3F40;
-      --np-bg: #EDECE8;
+      --nnp-navy: #021B3A;
+      --nnp-navy-soft: #06254C;
+      --nnp-orange: #FF8A1F;
+      --nnp-orange-deep: #FF5C00;
+      --nnp-text-soft: #D1D4E0;
+      --nnp-offwhite: #F7F7FA;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -23,25 +23,28 @@
       align-items: center;
       justify-content: center;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      background: radial-gradient(circle at top left, #f5e5e2 0, var(--np-bg) 32%, #f7f7f7 100%);
-      color: var(--np-grey-dark);
+      background:
+        radial-gradient(circle at 0 0, rgba(0,164,184,0.25), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(255,138,31,0.25), transparent 55%),
+        linear-gradient(160deg, var(--nnp-navy) 0%, var(--nnp-navy-soft) 55%, #030816 100%);
+      color: var(--nnp-offwhite);
     }
 
     .card {
       max-width: 460px;
       width: 100%;
-      background: rgba(255,255,255,0.96);
+      background: rgba(2,10,32,0.96);
       border-radius: 20px;
       padding: 26px 22px 22px;
-      border: 1px solid rgba(0,0,0,0.04);
-      box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.6);
     }
 
     .tag {
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      color: #8B8B8C;
+      color: var(--nnp-text-soft);
       margin-bottom: 4px;
     }
 
@@ -64,15 +67,16 @@
       margin-top: 14px;
       padding: 9px 20px;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--np-red-dark), var(--np-red));
-      color: #ffffff;
+      background: linear-gradient(135deg, var(--nnp-orange-deep), var(--nnp-orange));
+      color: #1A1020;
       text-decoration: none;
       font-size: 0.94rem;
+      font-weight: 600;
     }
 
     .small {
       font-size: 0.84rem;
-      color: #8B8B8C;
+      color: var(--nnp-text-soft);
       margin-top: 8px;
     }
   </style>
@@ -82,14 +86,14 @@
     <div class="tag">Nationale Naamprijs</div>
     <h1>Bedankt voor je inzending</h1>
     <p>
-      We hebben je inzending ontvangen. Je krijgt een bevestiging op het e mailadres dat je hebt opgegeven.
+      We hebben je inzending ontvangen. Je krijgt een bevestiging op het e-mailadres dat je hebt opgegeven.
     </p>
     <p>
       Zodra de jury de shortlist per categorie heeft bepaald, hoor je of jouw naam is genomineerd.
     </p>
     <a href="/" class="button">Terug naar de website</a>
     <p class="small">
-      Vragen of een aanvulling op je inzending. Mail ons op info@nationalenaamprijs.nl.
+      Heb je nog een vraag of wil je iets aanvullen. Mail ons op info@nationalenaamprijs.nl.
     </p>
   </div>
 </body>

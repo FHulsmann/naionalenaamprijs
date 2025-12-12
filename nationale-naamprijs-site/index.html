@@ -428,37 +428,49 @@
 
     /* Jury */
 
-   <section class="section" id="jury">
-  <div class="section-inner">
-    <h2>Jury</h2>
-    <p class="small">
-      De jury kijkt naar naam, verhaal en werking in de praktijk. Vier experts, ieder met een eigen invalshoek.
-    </p>
+    .jury-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
 
-    <div class="stack" style="margin-top:12px;">
-      <div>
-        <strong>Ariane van Mancius</strong><br>
-        Branding specialist bij Now New Next. Gespecialiseerd in positionering en toekomstgerichte merkstrategie.
-      </div>
+    @media (max-width: 900px) {
+      .jury-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
 
-      <div>
-        <strong>Gerhard te Velde</strong><br>
-        Ondernemer en podcastmaker, bekend van Groeivoer. Ervaren in het vertalen van ideeën naar een helder verhaal.
-      </div>
+    @media (max-width: 640px) {
+      .jury-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-      <div>
-        <strong>Bas Kist</strong><br>
-        Merk- en trademarkspecialist, medeoprichter van Chiever. Dagelijks bezig met de juridische kant van merknaamgeving.
-      </div>
+    .jury-card {
+      background: #F9FAFB;
+      border-radius: 14px;
+      padding: 10px 11px 11px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
 
-      <div>
-        <strong>Stephan Gonnissen</strong><br>
-        Reclameveteraan en creatief strateeg. Ervaren in concept, campagnes en de kracht van eenvoud in communicatie.
-      </div>
-    </div>
-  </div>
-</section>
+    .jury-name {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: var(--nnp-navy-soft);
+    }
 
+    .jury-role {
+      font-size: 0.82rem;
+      color: var(--nnp-muted);
+      margin-bottom: 4px;
+    }
+
+    .jury-bio {
+      font-size: 0.86rem;
+      color: #4B5563;
+    }
 
     /* Video */
 

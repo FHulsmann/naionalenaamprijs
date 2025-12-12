@@ -9,14 +9,16 @@
   <style>
     :root {
       --nnp-navy: #021B3A;
-      --nnp-navy-soft: #06254C;
+      --nnp-navy-soft: #123054;
       --nnp-teal: #00A4B8;
       --nnp-orange: #FF8A1F;
       --nnp-orange-deep: #FF5C00;
-      --nnp-offwhite: #F7F7FA;
-      --nnp-text-soft: #D1D4E0;
-      --card-radius: 18px;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.35);
+      --nnp-offwhite: #F7F8FC;
+      --nnp-text: #1F2933;
+      --nnp-muted: #6B7280;
+
+      --radius-card: 18px;
+      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.12);
     }
 
     * {
@@ -30,114 +32,100 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      color: var(--nnp-offwhite);
+      color: var(--nnp-text);
       background:
-        radial-gradient(circle at 0 0, rgba(0,164,184,0.25), transparent 55%),
-        radial-gradient(circle at 100% 0, rgba(255,138,31,0.25), transparent 55%),
-        linear-gradient(160deg, var(--nnp-navy) 0%, var(--nnp-navy-soft) 55%, #030816 100%);
-    }
-
-    .page {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 0 18px 40px;
+        radial-gradient(circle at 0 0, rgba(0,164,184,0.18), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(255,138,31,0.16), transparent 55%),
+        linear-gradient(180deg, #F9FAFB 0%, #EFF3FA 60%, #E5ECF8 100%);
     }
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
-    /* Hero */
-
-    .hero {
-      position: relative;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-      margin-bottom: 24px;
+    a:hover {
+      text-decoration: underline;
     }
 
-    .hero-banner {
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 18px 20px 40px;
+    }
+
+    /* Header / hero */
+
+    header {
+      margin-bottom: 26px;
+    }
+
+    .hero-card {
       position: relative;
-      border-radius: 0 0 32px 32px;
-      overflow: hidden;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F4F9FF 45%, #FDF7F1 100%);
+      border-radius: 26px;
       box-shadow: var(--shadow-soft);
-      background: radial-gradient(circle at 10% 0, rgba(0,164,184,0.4), transparent 55%), #02435A;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 0;
+      align-items: stretch;
     }
 
-    .hero-banner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(135deg, rgba(2,27,58,0.90), rgba(2,27,58,0.45)),
-        radial-gradient(circle at 0 0, rgba(255,255,255,0.08), transparent 55%);
-      mix-blend-mode: multiply;
-      z-index: 1;
-    }
-
-    .hero-banner img.banner {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      display: block;
-      filter: saturate(1.2);
-    }
-
-    @media (min-width: 900px) {
-      .hero-banner img.banner {
-        height: 320px;
+    @media (max-width: 800px) {
+      .hero-card {
+        grid-template-columns: 1fr;
       }
     }
 
-    .hero-inner {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 24px 24px 26px;
-      background: linear-gradient(to top, rgba(2, 11, 32, 0.85) 0, transparent 55%);
+    .hero-main {
+      padding: 24px 26px 26px;
+      position: relative;
+      z-index: 1;
     }
 
-    .hero-logo-row {
+    .hero-top-row {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       margin-bottom: 10px;
     }
 
-    .hero-logo-row img.logo {
+    .hero-logo {
       height: 52px;
       width: auto;
     }
 
     .hero-badge {
-      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.35);
-      background: rgba(2, 21, 55, 0.75);
+      color: var(--nnp-muted);
+      background: rgba(248, 250, 252, 0.9);
     }
 
     .hero-title {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       letter-spacing: -0.04em;
-      margin: 4px 0 6px;
+      margin: 2px 0 6px;
+      color: var(--nnp-navy);
     }
 
     .hero-sub {
-      font-size: 1.02rem;
-      max-width: 520px;
-      color: var(--nnp-text-soft);
       margin: 0 0 12px;
+      font-size: 1.02rem;
+      color: #4B5563;
+      max-width: 540px;
     }
 
     .hero-meta {
-      font-size: 0.86rem;
-      color: var(--nnp-text-soft);
-      margin-bottom: 14px;
+      font-size: 0.9rem;
+      color: var(--nnp-muted);
+      margin-bottom: 16px;
     }
 
     .hero-cta-row {
@@ -155,100 +143,151 @@
       border-radius: 999px;
       border: none;
       background: linear-gradient(135deg, var(--nnp-orange-deep), var(--nnp-orange));
-      color: #1A1020;
+      color: #111827;
       font-size: 0.95rem;
       font-weight: 600;
-      text-decoration: none;
       cursor: pointer;
-      box-shadow: 0 12px 26px rgba(0,0,0,0.45);
+      box-shadow: 0 12px 26px rgba(148, 64, 0, 0.25);
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(0.97);
     }
 
     .hero-note {
-      font-size: 0.85rem;
-      color: var(--nnp-text-soft);
+      font-size: 0.86rem;
+      color: var(--nnp-muted);
+      max-width: 320px;
     }
 
-    /* Secties algemeen */
+    .hero-side {
+      position: relative;
+      min-height: 220px;
+      background: radial-gradient(circle at 0 0, rgba(0,164,184,0.35), transparent 60%),
+                  radial-gradient(circle at 100% 0, rgba(255,138,31,0.38), transparent 60%),
+                  var(--nnp-navy);
+    }
+
+    .hero-side::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(2,27,58,0.1), rgba(2,27,58,0.7));
+      mix-blend-mode: multiply;
+    }
+
+    .hero-banner {
+      position: relative;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.15);
+    }
+
+    @media (max-width: 800px) {
+      .hero-side {
+        display: none;
+      }
+    }
+
+    /* Sections */
 
     .section {
-      padding: 32px 0 6px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 24px;
     }
 
-    .section:last-of-type {
-      border-bottom: none;
+    .section-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-card);
+      padding: 20px 22px 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.25);
     }
 
-    .section-inner {
-      max-width: 720px;
-      margin: 0 auto;
+    .section-header {
+      margin-bottom: 10px;
     }
 
-    .section h2 {
-      font-size: 1.5rem;
-      margin: 0 0 10px;
+    .section-title {
+      font-size: 1.4rem;
+      margin: 0 0 4px;
       letter-spacing: -0.01em;
+      color: var(--nnp-navy-soft);
     }
 
-    .section p,
-    .section li {
-      font-size: 0.97rem;
-      line-height: 1.6;
-      color: var(--nnp-offwhite);
-    }
-
-    .section p.small,
-    .section li.small {
+    .section-kicker {
       font-size: 0.86rem;
-      color: var(--nnp-text-soft);
+      color: var(--nnp-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
 
-    .stack {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    p {
+      font-size: 0.96rem;
+      line-height: 1.6;
+      margin: 0 0 10px;
+      color: #111827;
+    }
+
+    .small {
+      font-size: 0.86rem;
+      color: var(--nnp-muted);
+    }
+
+    ul {
+      margin: 0 0 10px 20px;
+      padding: 0;
+      font-size: 0.96rem;
     }
 
     /* Categorieën */
 
     .category-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 8px;
     }
 
-    @media (min-width: 720px) {
+    @media (max-width: 720px) {
       .category-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
       }
     }
 
     .category-card {
-      background: rgba(5, 26, 68, 0.9);
-      border-radius: var(--card-radius);
-      padding: 14px 16px 16px;
-      border: 1px solid rgba(255,255,255,0.09);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+      background: #F9FAFB;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 12px 14px 13px;
     }
 
     .category-label {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--nnp-text-soft);
+      letter-spacing: 0.16em;
+      color: var(--nnp-muted);
       margin-bottom: 4px;
     }
 
     .category-title {
       font-size: 1rem;
+      font-weight: 600;
       margin-bottom: 4px;
-      color: var(--nnp-offwhite);
+      color: var(--nnp-navy-soft);
     }
 
     .category-card p {
       font-size: 0.9rem;
-      color: var(--nnp-text-soft);
+      color: #374151;
       margin: 0;
     }
 
@@ -257,15 +296,16 @@
     .step-list {
       list-style: none;
       padding: 0;
-      margin: 10px 0 0;
+      margin: 4px 0 0;
       counter-reset: step;
     }
 
     .step-list li {
       position: relative;
-      padding-left: 28px;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
+      padding-left: 26px;
+      margin-bottom: 6px;
+      font-size: 0.94rem;
+      color: #111827;
     }
 
     .step-list li::before {
@@ -273,28 +313,27 @@
       content: counter(step);
       position: absolute;
       left: 0;
-      top: 3px;
+      top: 2px;
       width: 18px;
       height: 18px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.4);
+      border: 1px solid rgba(148, 163, 184, 0.9);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.74rem;
-      color: var(--nnp-text-soft);
-      background: rgba(3, 15, 40, 0.9);
+      font-size: 0.72rem;
+      color: var(--nnp-muted);
+      background: #F9FAFB;
     }
 
     /* Formulier */
 
     form {
-      margin-top: 8px;
-      background: rgba(6, 27, 70, 0.96);
-      border-radius: var(--card-radius);
-      padding: 18px 18px 16px;
-      border: 1px solid rgba(255,255,255,0.09);
-      box-shadow: 0 14px 36px rgba(0,0,0,0.45);
+      margin-top: 6px;
+      background: #F9FAFB;
+      border-radius: var(--radius-card);
+      padding: 16px 16px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
     }
 
     .field {
@@ -321,7 +360,7 @@
       display: block;
       font-size: 0.86rem;
       margin-bottom: 3px;
-      color: var(--nnp-text-soft);
+      color: var(--nnp-muted);
     }
 
     input[type="text"],
@@ -330,16 +369,16 @@
     textarea {
       width: 100%;
       padding: 8px 10px;
-      border-radius: 6px;
-      border: 1px solid rgba(255,255,255,0.26);
+      border-radius: 7px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
       font: inherit;
-      background: rgba(2, 10, 32, 0.92);
-      color: var(--nnp-offwhite);
+      background: #FFFFFF;
+      color: var(--nnp-text);
     }
 
     input::placeholder,
     textarea::placeholder {
-      color: rgba(209,212,224,0.7);
+      color: rgba(148, 163, 184, 0.9);
     }
 
     textarea {
@@ -352,7 +391,7 @@
       align-items: flex-start;
       gap: 8px;
       font-size: 0.86rem;
-      color: var(--nnp-text-soft);
+      color: var(--nnp-muted);
     }
 
     .field-checkbox input[type="checkbox"] {
@@ -360,7 +399,7 @@
     }
 
     .submit-row {
-      margin-top: 12px;
+      margin-top: 10px;
       display: flex;
       flex-direction: column;
       gap: 4px;
@@ -371,15 +410,66 @@
       border-radius: 999px;
       border: none;
       background: linear-gradient(135deg, var(--nnp-orange-deep), var(--nnp-orange));
-      color: #1A1020;
+      color: #111827;
       font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
+      align-self: flex-start;
+    }
+
+    .submit-row button:hover {
+      filter: brightness(0.97);
     }
 
     .small-note {
       font-size: 0.8rem;
-      color: var(--nnp-text-soft);
+      color: var(--nnp-muted);
+    }
+
+    /* Jury */
+
+    .jury-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 900px) {
+      .jury-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .jury-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .jury-card {
+      background: #F9FAFB;
+      border-radius: 14px;
+      padding: 10px 11px 11px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .jury-name {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: var(--nnp-navy-soft);
+    }
+
+    .jury-role {
+      font-size: 0.82rem;
+      color: var(--nnp-muted);
+      margin-bottom: 4px;
+    }
+
+    .jury-bio {
+      font-size: 0.86rem;
+      color: #4B5563;
     }
 
     /* Video */
@@ -389,10 +479,10 @@
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      border-radius: var(--card-radius);
+      border-radius: var(--radius-card);
       background: #000;
-      box-shadow: 0 14px 34px rgba(0,0,0,0.6);
-      margin-top: 12px;
+      box-shadow: var(--shadow-soft);
+      margin-top: 10px;
     }
 
     .video-wrapper iframe {
@@ -406,35 +496,32 @@
     /* Footer */
 
     footer {
-      margin-top: 30px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255,255,255,0.12);
-      font-size: 0.84rem;
-      color: var(--nnp-text-soft);
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-top: 26px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.86rem;
+      color: var(--nnp-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
     }
 
     footer a {
-      color: inherit;
       text-decoration: underline;
       text-decoration-thickness: 1px;
     }
+
   </style>
 </head>
 <body>
 
   <div class="page">
 
-    <header class="hero" id="top">
-      <div class="hero-banner">
-        <!-- Bannerbeeld: upload in je repo als banner-nnp.png -->
-        <img src="banner-nnp.png" alt="Nationale Naamprijs" class="banner">
-        <div class="hero-inner">
-          <div class="hero-logo-row">
-            <!-- Logo: upload in je repo als logo-nnp.svg -->
-            <img src="logo-nnp.svg" alt="Nationale Naamprijs logo" class="logo">
+    <header id="top">
+      <div class="hero-card">
+        <div class="hero-main">
+          <div class="hero-top-row">
+            <img src="logo-nnp.svg" alt="Nationale Naamprijs logo" class="hero-logo">
             <span class="hero-badge">Editie 2025</span>
           </div>
           <h1 class="hero-title">Nationale Naamprijs</h1>
@@ -442,13 +529,18 @@
             De prijs voor namen die blijven hangen. Voor merken, bedrijven en horecazaken die durven kiezen.
           </p>
           <p class="hero-meta">
-            Inzenden in vier categorieën. Eén naam per inzending.
+            Inzenden in vier categorieën. Eén naam per inzending. De jury stelt per categorie een shortlist samen.
           </p>
           <div class="hero-cta-row">
             <a href="#inschrijven" class="btn-primary">Schrijf je naam in</a>
             <span class="hero-note">
-              Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding, Horeca Naam van het Jaar.
+              Categorieën: Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding en Horeca Naam van het Jaar.
             </span>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="hero-banner">
+            <img src="banner-nnp.png" alt="Sfeerbeeld Nationale Naamprijs">
           </div>
         </div>
       </div>
@@ -456,28 +548,38 @@
 
     <main>
 
+      <!-- Waarom -->
+
       <section class="section" id="over">
-        <div class="section-inner stack">
-          <h2>Waarom deze prijs er is</h2>
+        <div class="section-card">
+          <div class="section-header">
+            <div class="section-kicker">Waarom deze prijs er is</div>
+            <h2 class="section-title">Namen die keuzes sturen</h2>
+          </div>
           <p>
-            Namen sturen keuzes. In een paar letters maak je duidelijk wat mensen mogen verwachten. De Nationale Naamprijs zet namen in het licht die bewust zijn gekozen en goed werken in de praktijk.
+            In een paar letters maak je duidelijk wat mensen mogen verwachten. Een sterke naam helpt klanten kiezen, geeft richting aan merkverhalen en maakt interne trots zichtbaar.
           </p>
           <p>
-            Het gaat om echte namen. Namen op gevels, verpakkingen, apps en websites. Geen theoretische voorstellen in een la.
+            De Nationale Naamprijs zet namen in het licht die bewust zijn gekozen en goed werken in de praktijk. Namen die op gevels, verpakkingen, apps en websites leven. Geen theoretische voorstellen in een la, maar echte cases.
           </p>
         </div>
       </section>
 
+      <!-- Voor wie -->
+
       <section class="section" id="voor-wie">
-        <div class="section-inner stack">
-          <h2>Voor wie je instuurt</h2>
+        <div class="section-card">
+          <div class="section-header">
+            <div class="section-kicker">Voor wie</div>
+            <h2 class="section-title">Ondernemers, bureaus en organisaties</h2>
+          </div>
           <p>
             Je kunt inzenden als ondernemer, als bureau of namens een organisatie:
           </p>
           <ul>
-            <li>Ondernemers met een naam waar ze bewust voor hebben gekozen</li>
-            <li>Branding en designbureaus die namen maken voor klanten</li>
-            <li>Organisaties die recent zijn gerebrand</li>
+            <li>Ondernemers met een naam waar ze bewust voor hebben gekozen.</li>
+            <li>Branding en designbureaus die namen maken voor klanten.</li>
+            <li>Organisaties die recent zijn gerebrand en een volgende stap hebben gezet.</li>
           </ul>
           <p class="small">
             Je mag eigen werk insturen of namens een opdrachtgever. Zorg dat de naam in gebruik is of concreet op de planning staat.
@@ -485,9 +587,14 @@
         </div>
       </section>
 
+      <!-- Categorieën -->
+
       <section class="section" id="categorieen">
-        <div class="section-inner">
-          <h2>Categorieën</h2>
+        <div class="section-card">
+          <div class="section-header">
+            <div class="section-kicker">Categorieën</div>
+            <h2 class="section-title">Kies één categorie per naam</h2>
+          </div>
           <p>
             Kies bij je inzending één categorie. Twijfel je, kies dan waar de naam nu het meest voor wordt gebruikt.
           </p>
@@ -528,9 +635,14 @@
         </div>
       </section>
 
+      <!-- Hoe werkt het -->
+
       <section class="section" id="hoe-werkt-het">
-        <div class="section-inner">
-          <h2>Hoe het werkt</h2>
+        <div class="section-card">
+          <div class="section-header">
+            <div class="section-kicker">Proces</div>
+            <h2 class="section-title">Hoe het werkt</h2>
+          </div>
           <ul class="step-list">
             <li>Je vult het formulier hieronder in en kiest één categorie.</li>
             <li>We controleren of de inzending compleet is.</li>
@@ -542,23 +654,67 @@
           </p>
         </div>
       </section>
-<form name="testform" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="testform">
-  <input type="text" name="testveld">
-  <button type="submit">Test</button>
-</form>
+
+      <!-- Jury -->
+
+      <section class="section" id="jury">
+        <div class="section-card">
+          <div class="section-header">
+            <div class="section-kicker">Jury</div>
+            <h2 class="section-title">De mensen achter de selectie</h2>
+          </div>
+          <p class="small">
+            Vul hieronder de echte namen en rollen in. De structuur staat vast, de inhoud kun je zelf aanpassen.
+          </p>
+          <div class="jury-grid">
+            <div class="jury-card">
+              <div class="jury-name">Naam 1</div>
+              <div class="jury-role">Functie / bureau</div>
+              <div class="jury-bio">
+                Korte zin over expertise in naamgeving, branding of taal.
+              </div>
+            </div>
+            <div class="jury-card">
+              <div class="jury-name">Naam 2</div>
+              <div class="jury-role">Functie / organisatie</div>
+              <div class="jury-bio">
+                Korte zin over ervaring met merken bouwen of merkstrategie.
+              </div>
+            </div>
+            <div class="jury-card">
+              <div class="jury-name">Naam 3</div>
+              <div class="jury-role">Functie / achtergrond</div>
+              <div class="jury-bio">
+                Korte zin over blik op taal, cultuur of creativiteit.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formulier -->
 
       <section class="section" id="inschrijven">
-        <div class="section-inner">
-          <h2>Inschrijfformulier</h2>
+        <div class="section-card">
+          <div class="section-header">
+            <div class="section-kicker">Inschrijven</div>
+            <h2 class="section-title">Stuur jouw naam in</h2>
+          </div>
           <p>
             Je kunt meerdere namen insturen. Gebruik per naam een apart formulier.
           </p>
 
-<form name="naamprijs-inschrijving" method="POST" data-netlify="true" action="/bedankt.html">
-  <input type="hidden" name="form-name" value="naamprijs-inschrijving">
-
-
+          <!-- Netlify form (werkende setup behouden) -->
+          <form
+            name="naamprijs-inschrijving"
+            method="POST"
+            netlify
+            netlify-honeypot="extra-field"
+            action="/bedankt.html"
+          >
+            <input type="hidden" name="form-name" value="naamprijs-inschrijving">
+            <p style="display:none;">
+              <label>Laat dit veld leeg: <input name="extra-field"></label>
             </p>
 
             <div class="field-inline">
@@ -619,14 +775,19 @@
         </div>
       </section>
 
+      <!-- Video -->
+
       <section class="section" id="video">
-        <div class="section-inner">
-          <h2>Video vorige editie</h2>
+        <div class="section-card">
+          <div class="section-header">
+            <div class="section-kicker">Vorige editie</div>
+            <h2 class="section-title">Sfeer van de uitreiking</h2>
+          </div>
           <p class="small">
             Een indruk van de genomineerden, de zaal en de winnende namen.
           </p>
           <div class="video-wrapper">
-            <!-- Vervang VIDEO_ID door de echte YouTube of Vimeo id -->
+            <!-- Vervang VIDEO_ID door de echte YouTube- of Vimeo-id -->
             <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Nationale Naamprijs vorige editie" allowfullscreen></iframe>
           </div>
         </div>
@@ -641,8 +802,11 @@
       <div>
         Contact: <a href="mailto:info@nationalenaamprijs.nl">info@nationalenaamprijs.nl</a>
       </div>
-      <div class="small" style="margin-top:6px;">
+      <div>
         We gebruiken alleen functionele cookies en ingesloten video.
+      </div>
+      <div>
+        Voorwaarden: voeg hier een link naar je voorwaarden-pdf of pagina toe.
       </div>
     </footer>
 

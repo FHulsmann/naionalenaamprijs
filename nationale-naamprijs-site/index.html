@@ -7,6 +7,11 @@
   <meta name="description" content="De Nationale Naamprijs bekroont sterke namen. Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding en Horeca Naam van het Jaar.">
 
   <style>
+
+    html, body {
+  overflow-x: hidden;
+}
+
     :root {
       --nnp-navy: #021B3A;
       --nnp-navy-soft: #123054;
@@ -50,13 +55,27 @@
 
     .page {
       max-width: 1080px;
-      margin: 0 auto;
+      margin: 0 auto;.hero-banner {
+  position: relative;
+}
+
       padding: 18px 20px 40px;
     }
 
     /* Header / hero */
 
 <header class="hero" id="top">
+    .hero-banner img.banner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.1) blur(2px);
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
   <div class="hero-banner">
     <img src="Nationale Naamprijs Banner.png" alt="" class="banner">
   </div>

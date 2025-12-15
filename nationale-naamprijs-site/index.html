@@ -20,38 +20,20 @@
 }
 
 
-    :root 
-    
-    body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  color: var(--nnp-text);
-  background:
-    radial-gradient(circle at 0 0, rgba(0,164,184,0.18), transparent 55%),
-    radial-gradient(circle at 100% 0, rgba(255,138,31,0.16), transparent 55%),
-    linear-gradient(180deg, #F9FAFB 0%, #EFF3FA 60%, #E5ECF8 100%);
+
+:root {
+  --nnp-navy: #021B3A;
+  --nnp-navy-soft: #123054;
+  --nnp-teal: #00A4B8;
+  --nnp-orange: #FF8A1F;
+  --nnp-orange-deep: #FF5C00;
+  --nnp-offwhite: #F7F8FC;
+  --nnp-text: #1F2933;
+  --nnp-muted: #6B7280;
+
+  --radius-card: 18px;
+  --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.12);
 }
-
-    .page {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 18px 20px 40px;
-}
-
-    
-    {
-      --nnp-navy: #021B3A;
-      --nnp-navy-soft: #123054;
-      --nnp-teal: #00A4B8;
-      --nnp-orange: #FF8A1F;
-      --nnp-orange-deep: #FF5C00;
-      --nnp-offwhite: #F7F8FC;
-      --nnp-text: #1F2933;
-      --nnp-muted: #6B7280;
-
-      --radius-card: 18px;
-      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.12);
-    }
 
     * {
       box-sizing: border-box;
@@ -134,12 +116,7 @@
   margin: 0 0 18px;
 }
 
-<div class="hero-visual">
-  <img
-    src="banner-nnp.png"
-    alt="Nationale Naamprijs"
-  >
-</div>
+
 
 
 
@@ -442,13 +419,16 @@
         Schrijf je naam in
       </a>
     </div>
-
+.hero-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
     <div class="hero-visual">
-      <img
-        src="Nationale Naamprijs Banner.png"
-        alt=""
-        aria-hidden="true"
-      >
+     <img src="banner-nnp.png" alt="Nationale Naamprijs" />
+  
+
     </div>
 
   </div>

@@ -56,185 +56,33 @@
 
     /* Header / hero */
 
-/* Full bleed hero: gaat buiten de max-width van .page */
-.hero {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  padding-left: 0;
-  padding-right: 0;
-  border-bottom: none;
-}
+<header class="hero" id="top">
+  <div class="hero-banner">
+    <img src="Nationale Naamprijs Banner.png" alt="" class="banner">
+  </div>
 
-/* Zorg dat de rest van de pagina nog wel netjes binnen 1040px blijft */
-.page {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 0 18px 40px;
-}
+  <div class="hero-content">
+    <div class="hero-inner">
+      <div class="hero-logo-row">
+        <img src="NAM003-3_logo_Nat-Naamprijs.svg" alt="Nationale Naamprijs" class="logo">
+        <span class="hero-badge">Editie 2025</span>
+      </div>
 
+      <h1 class="hero-title">Nationale Naamprijs</h1>
 
-    .hero-top-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
+      <p class="hero-sub">
+        De prijs voor namen die blijven hangen. Voor merken, bedrijven en horecazaken die durven kiezen.
+      </p>
 
-    .hero-logo {
-      height: 52px;
-      width: auto;
-    }
+      <p class="hero-meta">
+        Inzenden in vier categorieën. Eén naam per inzending.
+      </p>
 
-    .hero-badge {
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--nnp-muted);
-      background: rgba(248, 250, 252, 0.9);
-    }
+      <a href="#inschrijven" class="btn-primary">Schrijf je naam in</a>
+    </div>
+  </div>
+</header>
 
-    .hero-title {
-      font-size: 2.2rem;
-      letter-spacing: -0.04em;
-      margin: 2px 0 6px;
-      color: var(--nnp-navy);
-    }
-
-    .hero-sub {
-      margin: 0 0 12px;
-      font-size: 1.02rem;
-      color: #4B5563;
-      max-width: 540px;
-    }
-
-    .hero-meta {
-      font-size: 0.9rem;
-      color: var(--nnp-muted);
-      margin-bottom: 16px;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 22px;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, var(--nnp-orange-deep), var(--nnp-orange));
-      color: #111827;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 12px 26px rgba(148, 64, 0, 0.25);
-      text-decoration: none;
-    }
-
-    .btn-primary:hover {
-      filter: brightness(0.97);
-    }
-
-    .hero-note {
-      font-size: 0.86rem;
-      color: var(--nnp-muted);
-      max-width: 320px;
-    }
-
-    .hero-side {
-      position: relative;
-      min-height: 220px;
-      background: radial-gradient(circle at 0 0, rgba(0,164,184,0.35), transparent 60%),
-                  radial-gradient(circle at 100% 0, rgba(255,138,31,0.38), transparent 60%),
-                  var(--nnp-navy);
-    }
-
-    .hero-side::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(2,27,58,0.1), rgba(2,27,58,0.7));
-      mix-blend-mode: multiply;
-    }
-
-    .hero-banner {
-      position: relative;
-      height: 100%;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .hero-banner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: saturate(1.15);
-    }
-
-    @media (max-width: 800px) {
-      .hero-side {
-        display: none;
-      }
-    }
-
-    /* Sections */
-
-    .section {
-      margin-bottom: 24px;
-    }
-
-    .section-card {
-      background: #FFFFFF;
-      border-radius: var(--radius-card);
-      padding: 20px 22px 18px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-    }
-
-    .section-header {
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      margin: 0 0 4px;
-      letter-spacing: -0.01em;
-      color: var(--nnp-navy-soft);
-    }
-
-    .section-kicker {
-      font-size: 0.86rem;
-      color: var(--nnp-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    p {
-      font-size: 0.96rem;
-      line-height: 1.6;
-      margin: 0 0 10px;
-      color: #111827;
-    }
-
-    .small {
-      font-size: 0.86rem;
-      color: var(--nnp-muted);
-    }
-
-    ul {
-      margin: 0 0 10px 20px;
-      padding: 0;
-      font-size: 0.96rem;
-    }
 
     /* Categorieën */
 

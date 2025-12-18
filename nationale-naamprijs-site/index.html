@@ -426,44 +426,51 @@
       color: var(--nnp-muted);
     }
 
-   <div class="jury-card">
-  <div class="jury-top">
-    <img class="jury-photo" src="/img/jury-stephan-gonnissen.jpg" alt="Stephan Gonnissen">
-    <div class="jury-text">
-      <div class="jury-name">Stephan Gonnissen</div>
-      <div class="jury-role">Creative director</div>
-    </div>
-  </div>
-  <div class="jury-bio">
-    Prijswinnend creative director met werk voor Apple en Volvo. Bekend om scherpe concepten en sterke brandingprojecten.
-  </div>
-</div>
+    /* Jury */
 
-<div class="jury-card">
-  <div class="jury-top">
-    <img class="jury-photo" src="/img/jury-ariane-van-mancius.jpg" alt="Ariane van Mancius">
-    <div class="jury-text">
-      <div class="jury-name">Ariane van Mancius</div>
-      <div class="jury-role">Brandingexpert. Oprichter Now New Next</div>
-    </div>
-  </div>
-  <div class="jury-bio">
-    Brandingexpert en oprichter van Now New Next. Gespecialiseerd in naamstrategieën en positionering.
-  </div>
-</div>
+    .jury-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
 
-<div class="jury-card">
-  <div class="jury-top">
-    <img class="jury-photo" src="/img/jury-gerhard-te-velde.jpg" alt="Gerhard te Velde">
-    <div class="jury-text">
-      <div class="jury-name">Gerhard te Velde</div>
-      <div class="jury-role">Ondernemer. Podcastmaker</div>
-    </div>
-  </div>
-  <div class="jury-bio">
-    Ondernemer en host van de podcast Groeivoer. Liefhebber van sterke merkverhalen en ondernemerschap.
-  </div
+    @media (max-width: 900px) {
+      .jury-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
 
+    @media (max-width: 640px) {
+      .jury-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .jury-card {
+      background: #F9FAFB;
+      border-radius: 14px;
+      padding: 10px 11px 11px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .jury-name {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: var(--nnp-navy-soft);
+    }
+
+    .jury-role {
+      font-size: 0.82rem;
+      color: var(--nnp-muted);
+      margin-bottom: 4px;
+    }
+
+    .jury-bio {
+      font-size: 0.86rem;
+      color: #4B5563;
+    }
 
     /* Video */
 

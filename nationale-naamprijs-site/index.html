@@ -332,6 +332,13 @@
 
     /* Formulier */
 
+    <section class="section" id="inschrijven">
+  <div class="section-card">
+    ...
+  </div>
+</section>
+
+    
     form {
       margin-top: 6px;
       background: #F9FAFB;
@@ -768,76 +775,20 @@ De Nationale Naamprijs is een intiatief van naamcreatiebureau Namarama. Een onaf
             Je kunt meerdere namen insturen. Gebruik per naam een apart formulier.
           </p>
 
-          <!-- Netlify form (werkende setup behouden) -->
-          <form
-            name="naamprijs-inschrijving"
-            method="POST"
-            netlify
-            netlify-honeypot="extra-field"
-            action="/bedankt.html"
-          >
-            <input type="hidden" name="form-name" value="naamprijs-inschrijving">
-            <p style="display:none;">
-              <label>Laat dit veld leeg: <input name="extra-field"></label>
-            </p>
+         <div class="submit-row">
+  <a 
+    href="https://docs.google.com/forms/d/e/https://docs.google.com/forms/d/e/1FAIpQLSd1cgaEck7-nqCfPoP0S7n0y9l9j-mMDb0vxKDOBF9RNsu0_A/viewform?usp=dialog/viewform"
+    class="btn-primary"
+    target="_blank"
+    rel="noopener"
+  >
+    Ga naar het inschrijfformulier
+  </a>
+  <span class="small-note">
+    Het formulier opent in een nieuw tabblad.
+  </span>
+</div>
 
-            <div class="field-inline">
-              <div class="field">
-                <label for="contact-naam">Naam contactpersoon</label>
-                <input type="text" id="contact-naam" name="contact-naam" required>
-              </div>
-              <div class="field">
-                <label for="organisatie">Bedrijf of organisatie</label>
-                <input type="text" id="organisatie" name="organisatie">
-              </div>
-            </div>
-
-            <div class="field-inline" style="margin-top:12px;">
-              <div class="field">
-                <label for="email">E mail</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-              <div class="field">
-                <label for="categorie">Categorie</label>
-                <select id="categorie" name="categorie" required>
-                  <option value="">Kies een categorie</option>
-                  <option value="beste-bedrijfsnaam">Beste Bedrijfsnaam</option>
-                  <option value="mooiste-merknaam">Mooiste Merknaam</option>
-                  <option value="sterkste-rebranding">Sterkste Rebranding</option>
-                  <option value="horeca-naam-van-het-jaar">Horeca Naam van het Jaar</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="naam-inzending">De naam die je instuurt</label>
-              <input type="text" id="naam-inzending" name="naam-inzending" required>
-            </div>
-
-            <div class="field">
-              <label for="url">Link naar website, app of social</label>
-              <input type="text" id="url" name="url" placeholder="https://">
-            </div>
-
-            <div class="field">
-              <label for="toelichting">Korte toelichting op de naam</label>
-              <textarea id="toelichting" name="toelichting" placeholder="Waar staat de naam voor, hoe is hij gekozen, wat merk je in de praktijk"></textarea>
-            </div>
-
-            <div class="field-checkbox">
-              <input type="checkbox" id="akkoord-voorwaarden" name="akkoord-voorwaarden" required>
-              <label for="akkoord-voorwaarden">
-                Ik ga akkoord met de voorwaarden en geef toestemming om deze inzending te gebruiken in communicatie over de Nationale Naamprijs.
-              </label>
-            </div>
-
-            <div class="submit-row">
-              <button type="submit">Inzending versturen</button>
-              <span class="small-note">Je ontvangt een bevestiging op het opgegeven e mailadres.</span>
-            </div>
-          </form>
-        </div>
-      </section>
 
       <!-- Video -->
 

@@ -462,10 +462,15 @@ header {
    /* Jury */
 .jury-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
   margin-top: 6px;
+
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 @media (max-width: 900px) {
   .jury-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -516,6 +521,11 @@ header {
   color: #4B5563;
   margin: 0;
   line-height: 1.45;
+}
+.jury-grid {
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
     /* Video */

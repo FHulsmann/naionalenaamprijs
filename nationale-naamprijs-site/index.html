@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -5,11 +6,14 @@
   <title>Nationale Naamprijs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="De Nationale Naamprijs bekroont sterke namen. Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding en Horeca Naam van het Jaar.">
-<link rel="icon" href="/favicon/favicon.ico" sizes="any">
-<link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" href="/favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
-<link rel="manifest" href="/favicon/site.webmanifest">
   <style>
     :root {
       --nnp-navy: #021B3A;
@@ -21,524 +25,406 @@
       --nnp-text: #1F2933;
       --nnp-muted: #6B7280;
 
-      --radius-card: 18px;
-      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.12);
+      --radius-card: 20px;
+      --shadow-soft: 0 1px 3px rgba(15,23,42,0.06), 0 8px 24px rgba(15,23,42,0.07);
+      --shadow-hover: 0 2px 6px rgba(15,23,42,0.08), 0 16px 40px rgba(15,23,42,0.10);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-family: 'DM Sans', system-ui, sans-serif;
       color: var(--nnp-text);
-      background:
-        radial-gradient(circle at 0 0, rgba(0,164,184,0.18), transparent 55%),
-        radial-gradient(circle at 100% 0, rgba(255,138,31,0.16), transparent 55%),
-        linear-gradient(180deg, #F9FAFB 0%, #EFF3FA 60%, #E5ECF8 100%);
+      background: #F4F6FB;
     }
 
-    a {
-      color: inherit;
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+    }
+
+    /* ── HERO ── */
+    header { margin-bottom: 40px; }
+
+    .hero-card {
+      position: relative;
+      background: #fff;
+      border-radius: 26px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.18);
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    }
+
+    .hero-main { padding: 32px 34px 34px; position: relative; z-index: 1; }
+
+    .hero-side {
+      position: relative;
+      min-height: 260px;
+      background: radial-gradient(circle at 0 0, rgba(0,164,184,0.26), transparent 60%),
+                  radial-gradient(circle at 100% 0, rgba(255,138,31,0.24), transparent 60%),
+                  #0B2447;
+    }
+
+    .hero-banner { position: relative; height: 100%; z-index: 1; overflow: hidden; }
+    .hero-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
+
+    .hero-top-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .hero-logo { height: 48px; width: auto; }
+
+    .hero-badge {
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--nnp-muted);
+      background: #F9FAFB;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.5rem;
+      letter-spacing: -0.02em;
+      margin: 0 0 10px;
+      color: var(--nnp-navy);
+      line-height: 1.15;
+    }
+
+    .hero-sub {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      color: #4B5563;
+      max-width: 440px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .hero-meta { font-size: 0.88rem; color: var(--nnp-muted); margin-bottom: 20px; }
+
+    .hero-cta-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 24px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--nnp-orange-deep), var(--nnp-orange));
+      color: #fff;
+      font-size: 0.93rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255,92,0,0.28);
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(255,92,0,0.34);
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .hero-note { font-size: 0.84rem; color: var(--nnp-muted); max-width: 300px; }
+
+    @media (max-width: 800px) {
+      .hero-card { grid-template-columns: 1fr; }
+      .hero-side { display: none; }
+      .hero-title { font-size: 2rem; }
     }
 
-    .page {
-      max-width: 80%;
-      margin: 0 auto;
-      padding: 18px 20px 40px;
-    }
+    /* ── SECTIONS ── */
+    .section { margin-top: 20px; }
 
-    /* Header / hero */
-
-header {
-  margin-bottom: 32px;
-}
-
-/* Zorgt dat de hero exact dezelfde breedte heeft als de rest */
-.hero-card {
-  max-width: 880px;          /* pas aan naar 820 / 900 als je wilt */
-  margin: 0 auto;            /* centreert */
-  position: relative;
-  background: linear-gradient(135deg, #FFFFFF 0%, #F4F9FF 45%, #FDF7F1 100%);
-  border-radius: 26px;
-  box-shadow: var(--shadow-soft);
-  overflow: hidden;
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 0;
-  align-items: stretch;
-}
-
-/* Maak de contentkolom iets rustiger en consistenter */
-.hero-main {
-  padding: 26px 28px 28px;
-  position: relative;
-  z-index: 1;
-}
-.section-card {
-  max-width: 880px;
-  margin-left: auto;
-  margin-right: auto;
-}
-#jury .section-card {
-  max-width: 880px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Bannerkolom: minder hard, minder “blok” */
-.hero-side {
-  position: relative;
-  min-height: 240px;
-  background: radial-gradient(circle at 0 0, rgba(0,164,184,0.26), transparent 60%),
-              radial-gradient(circle at 100% 0, rgba(255,138,31,0.24), transparent 60%),
-              #0B2447; /* iets zachter dan navy */
-}
-
-/* Overlay subtieler, anders voelt het zwaar */
-.hero-side::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(2,27,58,0.08), rgba(2,27,58,0.55));
-}
-
-.hero-banner {
-  position: relative;
-  height: 100%;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.hero-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 25%; /* speel met dit getal */
-  display: block;
-}
-
-/* Typografie en top-row, zoals jij had */
-.hero-top-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.hero-logo {
-  height: 52px;
-  width: auto;
-}
-
-.hero-badge {
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--nnp-muted);
-  background: rgba(248, 250, 252, 0.9);
-}
-
-.hero-title {
-  font-size: 2.2rem;
-  letter-spacing: -0.04em;
-  margin: 2px 0 6px;
-  color: var(--nnp-navy);
-}
-
-.hero-sub {
-  margin: 0 0 12px;
-  font-size: 1.02rem;
-  color: #4B5563;
-  max-width: 540px;
-}
-
-.hero-meta {
-  font-size: 0.9rem;
-  color: var(--nnp-muted);
-  margin-bottom: 16px;
-}
-
-.hero-cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 22px;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, var(--nnp-orange-deep), var(--nnp-orange));
-  color: #111827;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 12px 26px rgba(148, 64, 0, 0.25);
-  text-decoration: none;
-}
-
-.btn-primary:hover {
-  filter: brightness(0.97);
-}
-
-.hero-note {
-  font-size: 0.86rem;
-  color: var(--nnp-muted);
-  max-width: 320px;
-}
-
-/* Mobile */
-@media (max-width: 800px) {
-  .hero-card {
-    grid-template-columns: 1fr;
-  }
-  .hero-side {
-    display: none;
-  }
-  .hero-card {
-    max-width: 100%;
-  }
-}
-
-    /* Sections */
-
-.section {
-  margin-top: 56px;
-}
-
-.section-card {
-  max-width: 880px;
-  margin-left: auto;
-  margin-right: auto;
-}
     .section-card {
-      background: #FFFFFF;
+      background: #fff;
       border-radius: var(--radius-card);
-      padding: 20px 22px 18px;
+      padding: 28px 30px 26px;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.25);
+      border: 1px solid rgba(148,163,184,0.15);
+      transition: box-shadow 0.2s;
     }
 
-    .section-header {
-      margin-bottom: 10px;
+    .section-card:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Section header with decorative accent line */
+    .section-header { margin-bottom: 16px; }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      color: var(--nnp-teal);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .section-kicker::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 2px;
+      background: var(--nnp-teal);
+      border-radius: 2px;
     }
 
     .section-title {
-      font-size: 1.4rem;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.55rem;
       margin: 0 0 4px;
       letter-spacing: -0.01em;
-      color: var(--nnp-navy-soft);
-    }
-
-    .section-kicker {
-      font-size: 0.86rem;
-      color: var(--nnp-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+      color: var(--nnp-navy);
+      line-height: 1.25;
     }
 
     p {
       font-size: 0.96rem;
-      line-height: 1.6;
+      line-height: 1.65;
       margin: 0 0 10px;
-      color: #111827;
+      color: #374151;
     }
 
-    .small {
-      font-size: 0.86rem;
-      color: var(--nnp-muted);
-    }
+    .small { font-size: 0.86rem; color: var(--nnp-muted); }
 
     ul {
-      margin: 0 0 10px 20px;
+      margin: 0 0 10px 0;
       padding: 0;
-      font-size: 0.96rem;
+      list-style: none;
     }
 
-    /* Categorieën */
+    ul li {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #374151;
+      padding: 5px 0 5px 22px;
+      position: relative;
+    }
 
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--nnp-teal);
+    }
+
+    /* ── CATEGORIES ── */
     .category-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 12px;
-      margin-top: 8px;
+      margin-top: 12px;
     }
 
-    @media (max-width: 720px) {
-      .category-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    @media (max-width: 600px) { .category-grid { grid-template-columns: 1fr; } }
 
     .category-card {
-      background: #F9FAFB;
+      background: #F8FAFD;
       border-radius: 14px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 12px 14px 13px;
+      border: 1px solid rgba(148,163,184,0.22);
+      padding: 16px 18px 17px;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+      overflow: hidden;
     }
 
-    .category-label {
-      font-size: 0.76rem;
+    .category-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: linear-gradient(180deg, var(--nnp-teal), var(--nnp-orange));
+      border-radius: 3px 0 0 3px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .category-card:hover { background: #fff; border-color: rgba(0,164,184,0.3); }
+    .category-card:hover::after { opacity: 1; }
+
+    .category-number {
+      font-size: 0.68rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--nnp-muted);
-      margin-bottom: 4px;
+      letter-spacing: 0.18em;
+      color: var(--nnp-teal);
+      margin-bottom: 5px;
     }
 
     .category-title {
       font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       color: var(--nnp-navy-soft);
     }
 
     .category-card p {
-      font-size: 0.9rem;
-      color: #374151;
+      font-size: 0.88rem;
+      color: #6B7280;
       margin: 0;
+      line-height: 1.5;
     }
 
-    /* Stappen */
-
+    /* ── STEPS ── */
     .step-list {
       list-style: none;
       padding: 0;
-      margin: 4px 0 0;
+      margin: 8px 0 0;
       counter-reset: step;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
 
     .step-list li {
       position: relative;
-      padding-left: 26px;
-      margin-bottom: 6px;
-      font-size: 0.94rem;
-      color: #111827;
+      padding: 14px 0 14px 48px;
+      border-bottom: 1px solid rgba(148,163,184,0.15);
+      font-size: 0.95rem;
+      color: #1F2933;
     }
+
+    .step-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .step-list li:first-child { padding-top: 0; }
 
     .step-list li::before {
       counter-increment: step;
       content: counter(step);
       position: absolute;
       left: 0;
-      top: 2px;
-      width: 18px;
-      height: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: linear-gradient(135deg, var(--nnp-navy-soft), var(--nnp-navy));
+      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.72rem;
-      color: var(--nnp-muted);
-      background: #F9FAFB;
+      font-size: 0.78rem;
+      font-weight: 600;
     }
 
-    /* Formulier */
+    .step-list li:first-child::before { top: calc(50% + 7px); }
+    .step-list li:last-child::before { top: calc(50% - 7px); }
 
-    <section class="section" id="inschrijven">
-  <div class="section-card">
-    ...
-  </div>
-</section>
-
-    
-    form {
-      margin-top: 6px;
-      background: #F9FAFB;
-      border-radius: var(--radius-card);
-      padding: 16px 16px 14px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    .field {
-      margin-bottom: 14px;
-    }
-
-    .field-inline {
-      display: flex;
+    /* ── JURY ── */
+    .jury-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 12px;
+      margin-top: 12px;
     }
 
-    .field-inline .field {
-      flex: 1;
-      margin-bottom: 0;
-    }
+    @media (max-width: 640px) { .jury-grid { grid-template-columns: 1fr; } }
 
-    @media (max-width: 640px) {
-      .field-inline {
-        flex-direction: column;
-      }
-    }
-
-    label {
-      display: block;
-      font-size: 0.86rem;
-      margin-bottom: 3px;
-      color: var(--nnp-muted);
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 8px 10px;
-      border-radius: 7px;
-      border: 1px solid rgba(148, 163, 184, 0.9);
-      font: inherit;
-      background: #FFFFFF;
-      color: var(--nnp-text);
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-      color: rgba(148, 163, 184, 0.9);
-    }
-
-    textarea {
-      min-height: 90px;
-      resize: vertical;
-    }
-
-    .field-checkbox {
+    .jury-card {
+      background: #F8FAFD;
+      border-radius: 14px;
+      padding: 14px 16px;
+      border: 1px solid rgba(148,163,184,0.2);
       display: flex;
+      gap: 14px;
       align-items: flex-start;
-      gap: 8px;
-      font-size: 0.86rem;
-      color: var(--nnp-muted);
+      transition: background 0.2s, border-color 0.2s;
     }
 
-    .field-checkbox input[type="checkbox"] {
-      margin-top: 2px;
+    .jury-card:hover { background: #fff; border-color: rgba(0,164,184,0.25); }
+
+    .jury-photo {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      object-fit: cover;
+      flex: 0 0 52px;
+      border: 2px solid rgba(148,163,184,0.2);
+    }
+
+    .jury-info { min-width: 0; }
+
+    .jury-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--nnp-navy-soft);
+      margin: 0 0 2px;
+    }
+
+    .jury-role {
+      font-size: 0.78rem;
+      color: var(--nnp-teal);
+      font-weight: 500;
+      margin: 0 0 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .jury-bio {
+      font-size: 0.84rem;
+      color: #6B7280;
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* ── INSCHRIJVEN ── */
+    .cta-block {
+      background: linear-gradient(135deg, var(--nnp-navy) 0%, var(--nnp-navy-soft) 100%);
+      border-radius: var(--radius-card);
+      padding: 30px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta-block .cta-text p { color: rgba(255,255,255,0.7); margin: 4px 0 0; font-size: 0.9rem; }
+    .cta-block .cta-text h2 {
+      font-family: 'DM Serif Display', serif;
+      color: #fff;
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: -0.01em;
     }
 
     .submit-row {
-      margin-top: 10px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 6px;
+      align-items: flex-start;
     }
 
-    .submit-row button {
-      padding: 9px 22px;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, var(--nnp-orange-deep), var(--nnp-orange));
-      color: #111827;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      align-self: flex-start;
-    }
+    .small-note { font-size: 0.8rem; color: var(--nnp-muted); }
 
-    .submit-row button:hover {
-      filter: brightness(0.97);
-    }
-
-    .small-note {
-      font-size: 0.8rem;
-      color: var(--nnp-muted);
-    }
-
-   /* Jury */
-.jury-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 6px;
-
-  max-width: 880px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-@media (max-width: 900px) {
-  .jury-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 640px) {
-  .jury-grid { grid-template-columns: 1fr; }
-}
-
-.jury-card {
-  background: #F9FAFB;
-  border-radius: 14px;
-  padding: 12px;
-  border: 1px solid rgba(148, 163, 184, 0.4);
-
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
-
-.jury-photo {
-  width: 56px;
-  height: 56px;
-  border-radius: 999px;
-  object-fit: cover;
-  flex: 0 0 56px;
-}
-
-.jury-info {
-  min-width: 0;
-}
-
-.jury-name {
-  font-size: 0.96rem;
-  font-weight: 600;
-  color: var(--nnp-navy-soft);
-  margin: 0;
-}
-
-.jury-role {
-  font-size: 0.82rem;
-  color: var(--nnp-muted);
-  margin: 2px 0 6px;
-}
-
-.jury-bio {
-  font-size: 0.86rem;
-  color: #4B5563;
-  margin: 0;
-  line-height: 1.45;
-}
-.jury-grid {
-  max-width: 880px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-    /* Video */
-
+    /* ── VIDEO ── */
     .video-wrapper {
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      border-radius: var(--radius-card);
+      border-radius: 14px;
       background: #000;
-      box-shadow: var(--shadow-soft);
-      margin-top: 10px;
+      margin-top: 14px;
     }
 
     .video-wrapper iframe {
@@ -548,50 +434,68 @@ header {
       height: 100%;
       border: 0;
     }
-/* FAQ */
 
-.faq {
-  margin-top: 24px;
-}
+    /* ── FAQ ── */
+    .faq { margin-top: 4px; }
 
-.faq-item {
-  border-top: 1px solid rgba(148, 163, 184, 0.4);
-  padding: 10px 0;
-}
+    .faq-item {
+      border-radius: 12px;
+      margin-bottom: 6px;
+      background: #F8FAFD;
+      border: 1px solid rgba(148,163,184,0.18);
+      overflow: hidden;
+      transition: background 0.15s;
+    }
 
-.faq-item:last-child {
-  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
-}
+    .faq-item[open] { background: #fff; border-color: rgba(0,164,184,0.25); }
 
-.faq-item summary {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--nnp-navy-soft);
-  list-style: none;
-}
+    .faq-item summary {
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--nnp-navy-soft);
+      list-style: none;
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
 
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
+    .faq-item summary::-webkit-details-marker { display: none; }
 
-.faq-item p {
-  margin: 8px 0 0;
-  font-size: 0.9rem;
-  color: #374151;
-  line-height: 1.5;
-}
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--nnp-teal);
+      font-weight: 300;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+      line-height: 1;
+    }
 
-    /* Footer */
+    .faq-item[open] summary::after {
+      content: '−';
+    }
 
+    .faq-item p {
+      margin: 0;
+      padding: 0 16px 14px;
+      font-size: 0.9rem;
+      color: #374151;
+      line-height: 1.55;
+    }
+
+    /* ── FOOTER ── */
     footer {
-      margin-top: 26px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(148, 163, 184, 0.5);
-      font-size: 0.86rem;
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(148,163,184,0.3);
+      font-size: 0.84rem;
       color: var(--nnp-muted);
       display: flex;
       flex-wrap: wrap;
-      gap: 8px 20px;
+      gap: 6px 24px;
     }
 
     footer a {
@@ -599,12 +503,18 @@ header {
       text-decoration-thickness: 1px;
     }
 
+    /* ── DIVIDER ── */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(148,163,184,0.3), transparent);
+      margin: 6px 0;
+    }
   </style>
 </head>
 <body>
-
   <div class="page">
 
+    <!-- HERO -->
     <header id="top">
       <div class="hero-card">
         <div class="hero-main">
@@ -617,18 +527,18 @@ header {
             De prijs voor namen die blijven hangen. Voor merken, bedrijven en horecazaken die durven kiezen.
           </p>
           <p class="hero-meta">
-            Inzenden in vier categorieën. Eén naam per inzending. De jury stelt per categorie een shortlist samen.
+            Inzenden in vier categorieën · Eén naam per inzending · Jury stelt shortlist samen
           </p>
           <div class="hero-cta-row">
-            <a href="#inschrijven" class="btn-primary">Schrijf je naam in</a>
+            <a href="#inschrijven" class="btn-primary">Schrijf je naam in →</a>
             <span class="hero-note">
-              Categorieën: Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding en Horeca Naam van het Jaar.
+              Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding en Horeca Naam van het Jaar.
             </span>
           </div>
         </div>
         <div class="hero-side">
           <div class="hero-banner">
-           <img src="img/banner-nnp.png?v=2" alt="Nationale Naamprijs">
+            <img src="img/banner-nnp.png?v=2" alt="Nationale Naamprijs">
           </div>
         </div>
       </div>
@@ -636,96 +546,71 @@ header {
 
     <main>
 
-      <!-- Waarom -->
-
+      <!-- WAAROM -->
       <section class="section" id="over">
         <div class="section-card">
           <div class="section-header">
             <div class="section-kicker">Waarom een naamprijs?</div>
             <h2 class="section-title">Namen maken het verschil</h2>
           </div>
-          <p>
-Zonder naam ben je niks. Elke onderneming, elk product, elk voorwerp, elk mens, heeft een naam nodig. En daar mogen we best wel eens wat meer positieve aandacht aan geven.
-          </p>
-          <p>
-De Nationale Naamprijs is een intiatief van naamcreatiebureau Namarama. Een onafhankelijke jury bepaald welke namen een prijs verdienen. Meedoen is dit jaar weer geheel gratis!          </p>
+          <p>Zonder naam ben je niks. Elke onderneming, elk product, elk voorwerp, elk mens, heeft een naam nodig. En daar mogen we best wel eens wat meer positieve aandacht aan geven.</p>
+          <p>De Nationale Naamprijs is een initiatief van naamcreatiebureau Namarama. Een onafhankelijke jury bepaalt welke namen een prijs verdienen. Meedoen is dit jaar weer geheel gratis!</p>
         </div>
       </section>
 
-      <!-- Voor wie -->
-
+      <!-- VOOR WIE -->
       <section class="section" id="voor-wie">
         <div class="section-card">
           <div class="section-header">
             <div class="section-kicker">Voor wie</div>
             <h2 class="section-title">Ondernemers, bureaus en naam-enthousiastelingen</h2>
           </div>
-          <p>
-            Je kunt inzenden als ondernemer, als bureau of als jezelf omdat je ergens een toffe naam hebt gezien.
-          </p>
+          <p>Je kunt inzenden als ondernemer, als bureau of als jezelf omdat je ergens een toffe naam hebt gezien.</p>
           <ul>
             <li>Ondernemers met een naam waar ze bewust voor hebben gekozen.</li>
             <li>Branding en designbureaus die namen maken voor klanten.</li>
             <li>Organisaties die recent zijn gerebrand en een volgende stap hebben gezet.</li>
-           <li>Organisaties die recent zijn gerebrand en een volgende stap hebben gezet.</li>
-           <li>Mensen zoals jij en ik die een leuke naam gezien hebben.</li>
+            <li>Mensen zoals jij en ik die een leuke naam ergens hebben gezien.</li>
           </ul>
-          <p class="small">
-            Je mag eigen werk insturen of namens een opdrachtgever. Zorg dat de naam in gebruik is of concreet op de planning staat.
-          </p>
+          <p class="small">Je mag eigen werk insturen of namens een opdrachtgever. Zorg dat de naam in gebruik is of concreet op de planning staat.</p>
         </div>
       </section>
 
-      <!-- Categorieën -->
-
+      <!-- CATEGORIEËN -->
       <section class="section" id="categorieen">
         <div class="section-card">
           <div class="section-header">
             <div class="section-kicker">Categorieën</div>
             <h2 class="section-title">Kies één categorie per naam</h2>
           </div>
-          <p>
-            Kies bij je inzending één categorie. Twijfel je, kies dan waar de naam nu het meest voor wordt gebruikt.
-          </p>
+          <p>Kies bij je inzending één categorie. Twijfel je, kies dan waar de naam nu het meest voor wordt gebruikt.</p>
 
           <div class="category-grid">
             <article class="category-card">
-              <div class="category-label">Categorie 1</div>
+              <div class="category-number">Categorie 01</div>
               <div class="category-title">Beste Bedrijfsnaam</div>
-              <p>
-                Voor bedrijven waarvan de naam de essentie van de organisatie scherp neerzet. Herkenbaar, onderscheidend en passend bij de markt.
-              </p>
+              <p>Voor bedrijven waarvan de naam de essentie van de organisatie scherp neerzet. Herkenbaar, onderscheidend en passend bij de markt.</p>
             </article>
-
             <article class="category-card">
-              <div class="category-label">Categorie 2</div>
+              <div class="category-number">Categorie 02</div>
               <div class="category-title">Mooiste Merknaam</div>
-              <p>
-                Voor merknamen met een sterk eigen gezicht. Namen die een wereld oproepen en ruimte geven aan creatie en groei.
-              </p>
+              <p>Voor merknamen met een sterk eigen gezicht. Namen die een wereld oproepen en ruimte geven aan creatie en groei.</p>
             </article>
-
             <article class="category-card">
-              <div class="category-label">Categorie 3</div>
+              <div class="category-number">Categorie 03</div>
               <div class="category-title">Sterkste Rebranding</div>
-              <p>
-                Voor organisaties die een bestaande naam hebben vervangen en daarmee een volgende stap in hun verhaal zetten.
-              </p>
+              <p>Voor organisaties die een bestaande naam hebben vervangen en daarmee een volgende stap in hun verhaal zetten.</p>
             </article>
-
             <article class="category-card">
-              <div class="category-label">Categorie 4</div>
+              <div class="category-number">Categorie 04</div>
               <div class="category-title">Horeca Naam van het Jaar</div>
-              <p>
-                Voor horeca, cafés, restaurants en hotels waar de naam direct gevoel oproept en uitnodigt om binnen te stappen.
-              </p>
+              <p>Voor horeca, cafés, restaurants en hotels waar de naam direct gevoel oproept en uitnodigt om binnen te stappen.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Hoe werkt het -->
-
+      <!-- HOE WERKT HET -->
       <section class="section" id="hoe-werkt-het">
         <div class="section-card">
           <div class="section-header">
@@ -738,228 +623,174 @@ De Nationale Naamprijs is een intiatief van naamcreatiebureau Namarama. Een onaf
             <li>De jury maakt een shortlist per categorie.</li>
             <li>De finalisten worden uitgenodigd voor de uitreiking.</li>
           </ul>
-          <p class="small">
-            Insturen betekent dat je akkoord gaat met de voorwaarden en dat we de ingezonden namen mogen tonen in communicatie over de Nationale Naamprijs.
-          </p>
+          <p class="small" style="margin-top:14px">Insturen betekent dat je akkoord gaat met de voorwaarden en dat we de ingezonden namen mogen tonen in communicatie over de Nationale Naamprijs.</p>
         </div>
       </section>
 
-      <!-- Jury -->
-
-<section class="section" id="jury">
-  <div class="section-card">
-    <div class="section-header">
-      <div class="section-kicker">Jury</div>
-      <h2 class="section-title">De mensen achter de selectie</h2>
-    </div>
-
-    <div class="jury-grid">
-
-      <div class="jury-card">
-        <img class="jury-photo" src="/img/jury-stephan-gonnissen.jpg" alt="Stephan Gonnissen">
-        <div class="jury-info">
-          <div class="jury-name">Stephan Gonnissen</div>
-          <div class="jury-role">Creative director</div>
-          <div class="jury-bio">Prijswinnend creative director met werk voor Apple en Volvo. Bekend om scherpe concepten en sterke brandingprojecten.</div>
+      <!-- JURY -->
+      <section class="section" id="jury">
+        <div class="section-card">
+          <div class="section-header">
+            <div class="section-kicker">Jury</div>
+            <h2 class="section-title">De mensen achter de selectie</h2>
+          </div>
+          <div class="jury-grid">
+            <div class="jury-card">
+              <img class="jury-photo" src="/img/jury-stephan-gonnissen.jpg" alt="Stephan Gonnissen">
+              <div class="jury-info">
+                <div class="jury-name">Stephan Gonnissen</div>
+                <div class="jury-role">Creative director</div>
+                <div class="jury-bio">Prijswinnend creative director met werk voor Apple en Volvo. Bekend om scherpe concepten en sterke brandingprojecten.</div>
+              </div>
+            </div>
+            <div class="jury-card">
+              <img class="jury-photo" src="/img/jury-ariane-van-mancius.jpg" alt="Ariane van Mancius">
+              <div class="jury-info">
+                <div class="jury-name">Ariane van Mancius</div>
+                <div class="jury-role">Brandingexpert · Oprichter Now New Next</div>
+                <div class="jury-bio">Brandingexpert en oprichter van Now New Next. Gespecialiseerd in naamstrategieën en positionering.</div>
+              </div>
+            </div>
+            <div class="jury-card">
+              <img class="jury-photo" src="/img/jury-gerhard-te-velde.jpg" alt="Gerhard te Velde">
+              <div class="jury-info">
+                <div class="jury-name">Gerhard te Velde</div>
+                <div class="jury-role">Ondernemer · Podcastmaker</div>
+                <div class="jury-bio">Ondernemer en host van de podcast Groeivoer. Liefhebber van sterke merkverhalen en ondernemerschap.</div>
+              </div>
+            </div>
+            <div class="jury-card">
+              <img class="jury-photo" src="/img/jury-bas-kist.jpg" alt="Bas Kist">
+              <div class="jury-info">
+                <div class="jury-name">Bas Kist</div>
+                <div class="jury-role">Merkjurist · Mede-oprichter Chiever</div>
+                <div class="jury-bio">Merkjurist en mede-oprichter van Chiever. Expert in merkrecht, naamclaims en juridische positionering.</div>
+              </div>
+            </div>
+            <div class="jury-card">
+              <img class="jury-photo" src="/img/lennart-boorsma.png" alt="Lennart Boorsma">
+              <div class="jury-info">
+                <div class="jury-name">Lennart Boorsma</div>
+                <div class="jury-role">Marketingprofessional</div>
+                <div class="jury-bio">Marketingstrateeg en ondernemer met een achtergrond in merkontwikkeling, innovatie en digitale campagnes.</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="jury-card">
-        <img class="jury-photo" src="/img/jury-ariane-van-mancius.jpg" alt="Ariane van Mancius">
-        <div class="jury-info">
-          <div class="jury-name">Ariane van Mancius</div>
-          <div class="jury-role">Brandingexpert. Oprichter Now New Next</div>
-          <div class="jury-bio">Brandingexpert en oprichter van Now New Next. Gespecialiseerd in naamstrategieën en positionering.</div>
+      <!-- INSCHRIJVEN -->
+      <section class="section" id="inschrijven">
+        <div class="section-card">
+          <div class="section-header">
+            <div class="section-kicker">Inschrijven</div>
+            <h2 class="section-title">Stuur jouw naam in</h2>
+          </div>
+          <p>Je kunt meerdere namen insturen. Gebruik per naam een apart formulier.</p>
+
+          <div class="cta-block">
+            <div class="cta-text">
+              <h2>Klaar om in te sturen?</h2>
+              <p>Deadline: 11 mei 2026 · Deelname is gratis</p>
+            </div>
+            <div class="submit-row">
+              <a class="btn-primary"
+                 href="https://docs.google.com/forms/d/e/1FAIpQLSd1cgaEck7-nqCfPoP0S7n0y9l9j-mMDb0vxKDOBF9RNsu0_A/viewform?usp=dialog"
+                 target="_blank" rel="noopener">
+                Ga naar het inschrijfformulier →
+              </a>
+              <span class="small-note" style="color:rgba(255,255,255,0.45)">Het formulier opent in een nieuw tabblad.</span>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="jury-card">
-        <img class="jury-photo" src="/img/jury-gerhard-te-velde.jpg" alt="Gerhard te Velde">
-        <div class="jury-info">
-          <div class="jury-name">Gerhard te Velde</div>
-          <div class="jury-role">Ondernemer. Podcastmaker</div>
-          <div class="jury-bio">Ondernemer en host van de podcast Groeivoer. Liefhebber van sterke merkverhalen en ondernemerschap.</div>
-        </div>
-      </div>
-
-      <div class="jury-card">
-        <img class="jury-photo" src="/img/jury-bas-kist.jpg" alt="Bas Kist">
-        <div class="jury-info">
-          <div class="jury-name">Bas Kist</div>
-          <div class="jury-role">Merkjurist. Mede-oprichter Chiever</div>
-          <div class="jury-bio">Merkjurist en mede-oprichter van Chiever. Expert in merkrecht, naamclaims en juridische positionering.</div>
-        </div>
-      </div>
-
-      <div class="jury-card">
-        <img class="jury-photo" src="/img/lennart-boorsma.png" alt="Lennart Boorsma">
-        <div class="jury-info">
-          <div class="jury-name">Lennart Boorsma</div>
-          <div class="jury-role">Marketingprofessional</div>
-          <div class="jury-bio">Marketingstrateeg en ondernemer met een achtergrond in merkontwikkeling, innovatie en digitale campagnes voor grote organisaties.</div>
-        </div>
-      </div>
-
-    </div><!-- /jury-grid -->
-
-  </div><!-- /section-card -->
-</section><!-- /section -->
-
-      <!-- Formulier -->
-
-<section class="section" id="inschrijven">
-  <div class="section-card">
-    <div class="section-header">
-      <div class="section-kicker">Inschrijven</div>
-      <h2 class="section-title">Stuur jouw naam in</h2>
-    </div>
-
-    <p>
-      Je kunt meerdere namen insturen. Gebruik per naam een apart formulier.
-    </p>
-
-    <div class="submit-row">
-      <a
-        class="btn-primary"
-        href="https://docs.google.com/forms/d/e/1FAIpQLSd1cgaEck7-nqCfPoP0S7n0y9l9j-mMDb0vxKDOBF9RNsu0_A/viewform?usp=dialog"
-        target="_blank"
-        rel="noopener">
-        Ga naar het inschrijfformulier
-      </a>
-      <span class="small-note">Het formulier opent in een nieuw tabblad.</span>
-    </div>
-  </div>
-</section>
-
-
-
-      <!-- Video -->
-
+      <!-- VIDEO -->
       <section class="section" id="video">
         <div class="section-card">
           <div class="section-header">
             <div class="section-kicker">Vorige editie</div>
             <h2 class="section-title">Sfeer van de uitreiking</h2>
           </div>
-          <p class="small">
-            Een indruk van de genomineerden, de zaal en de winnende namen.
-          </p>
+          <p class="small">Een indruk van de genomineerden, de zaal en de winnende namen.</p>
           <div class="video-wrapper">
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/HzBBq6V7Tys?si=AjDiyvDOqTTRWsTO" title="YouTube video player" 
-             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315"
+              src="https://www.youtube.com/embed/HzBBq6V7Tys?si=AjDiyvDOqTTRWsTO"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="section-card">
+          <div class="section-header">
+            <div class="section-kicker">FAQ</div>
+            <h2 class="section-title">Vragen over de Nationale Naamprijs</h2>
+          </div>
+          <div class="faq">
+            <details class="faq-item">
+              <summary>Wat is de Nationale Naamprijs?</summary>
+              <p>De Nationale Naamprijs is de award voor de beste namen van Nederland. In vier categorieën bekronen we creativiteit, impact en originaliteit. Een initiatief van Namarama. <a href="https://namarama.nl/artikelen/nationale-naamprijs-2025-de-winnaars/" target="_blank" rel="noopener" style="color:var(--nnp-teal)">Bekijk de winnaars van de vorige editie →</a></p>
+            </details>
+            <details class="faq-item">
+              <summary>Wie kan er meedoen?</summary>
+              <p>Iedereen die betrokken is bij een naam die in Nederland actief is. Ondernemers, marketeers, merkbouwers en creatieve bureaus kunnen inzenden.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Wat zijn de categorieën?</summary>
+              <p>Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding en Horeca Naam van het Jaar.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Wat zijn de spelregels?</summary>
+              <p>De naam moet actief zijn in Nederland en vóór 1 april 2026 publiekelijk in gebruik zijn genomen. Je mag jezelf, je klant of iemand anders nomineren. Maximaal drie inzendingen per persoon.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Kost deelname geld?</summary>
+              <p>Nee. Deelname is volledig kosteloos.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Wat kan ik winnen?</summary>
+              <p>Een optreden bij De Ondernemer, zichtbaarheid binnen het vakgebied, de officiële award en een promotiepakket.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is er een deadline?</summary>
+              <p>Namen moeten uiterlijk 11 mei 2026 zijn ingezonden om kans te maken op een nominatie.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Hoe werkt het selectieproces?</summary>
+              <p>Inzending via het formulier. De organisatie stelt een longlist samen. De jury bepaalt de nominaties en kiest per categorie één winnaar.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Mag ik meerdere namen inzenden?</summary>
+              <p>Ja. Je mag maximaal drie verschillende namen inzenden.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Wie zit er in de jury?</summary>
+              <p>De jury bestaat uit namenexperts, merkjuristen, ondernemers, creatieven en marketeers. Zie de jurysectie hierboven voor de volledige samenstelling.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Mag ik een naam van een klant inzenden?</summary>
+              <p>Ja. Zolang je betrokken was bij het bedenken of ontwikkelen van de naam, mag je deze inzenden.</p>
+            </details>
+          </div>
+        </div>
       </section>
 
     </main>
-<section class="section" id="faq">
-  <div class="section-card">
-    <div class="section-header">
-      <div class="section-kicker">FAQ</div>
-      <h2 class="section-title">Vragen over de Nationale Naamprijs</h2>
-    </div>
-
-    <div class="faq">
-
-      <details class="faq-item">
-        <summary>Wat is de Nationale Naamprijs?</summary>
-        <p>
-          De Nationale Naamprijs is de award voor de beste namen van Nederland. In vier categorieën bekronen we creativiteit, impact en originaliteit. Een initiatief van Namarama. Hier vind je de finalisten en winnaars van de vorige editie. <a href="https://namarama.nl/artikelen/nationale-naamprijs-2025-de-winnaars/" target="_blank" rel="noopener">
-  Klik hier voor meer info.
-</a>
-
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Wie kan er meedoen?</summary>
-        <p>
-          Iedereen die betrokken is bij een naam die in Nederland actief is. Ondernemers, marketeers, merkbouwers en creatieve bureaus kunnen inzenden.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Wat zijn de categorieën?</summary>
-        <p>
-          Beste Bedrijfsnaam, Mooiste Productnaam, Sterkste Rebranding en Horeca Naam van het Jaar.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Wat zijn de spelregels?</summary>
-        <p>
-          De naam moet actief zijn in Nederland en vóór 1 april 2026 publiekelijk in gebruik zijn genomen. Je mag jezelf, je klant of iemand anders nomineren. Maximaal drie inzendingen per persoon.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Kost deelname geld?</summary>
-        <p>
-          Nee. Deelname is volledig kosteloos.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Wat kan ik winnen?</summary>
-        <p>
-          Een optreden bij De Ondernemer, zichtbaarheid binnen het vakgebied, de officiële award en een promotiepakket.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is er een deadline?</summary>
-        <p>
-          Namen moeten uiterlijk 11 mei 2026 zijn ingezonden om kans te maken op een nominatie.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Hoe werkt het selectieproces?</summary>
-        <p>
-          Inzending via het formulier. De organisatie stelt een longlist samen. De jury bepaalt de nominaties en kiest per categorie één winnaar.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Mag ik meerdere namen inzenden?</summary>
-        <p>
-          Ja. Je mag maximaal drie verschillende namen inzenden.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Wie zit er in de jury?</summary>
-        <p>
-          De jury bestaat uit namenexperts, merkjuristen, ondernemers, creatieven en marketeers. De juryleden worden binnenkort bekendgemaakt.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Mag ik een naam van een klant inzenden?</summary>
-        <p>
-          Ja. Zolang je betrokken was bij het bedenken of ontwikkelen van de naam, mag je deze inzenden.
-        </p>
-      </details>
-
-    </div>
-  </div>
-</section>
 
     <footer>
-      <div>
-        Nationale Naamprijs is een initiatief van Namarama.
-      </div>
-      <div>
-        Contact: <a href="mailto:info@ namarama.nl">info@ nationalenaamprijs.nl</a>
-      </div>
-      <div>
-        We gebruiken alleen functionele cookies en ingesloten video.
-      </div>
-      <div>
-        Voorwaarden: voeg hier een link naar je voorwaarden-pdf of pagina toe.
-      </div>
+      <div>Nationale Naamprijs is een initiatief van Namarama.</div>
+      <div>Contact: <span id="email"></span><script>document.getElementById('email').textContent='info'+'@'+'namarama.nl';</script></div>
+      <div>We gebruiken alleen functionele cookies en ingesloten video.</div>
+      <div>Voorwaarden: voeg hier een link naar je voorwaarden-pdf of pagina toe.</div>
     </footer>
 
   </div>
-
 </body>
 </html>

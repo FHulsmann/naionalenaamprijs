@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -31,7 +30,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -158,11 +156,8 @@
       transition: box-shadow 0.2s;
     }
 
-    .section-card:hover {
-      box-shadow: var(--shadow-hover);
-    }
+    .section-card:hover { box-shadow: var(--shadow-hover); }
 
-    /* Section header with decorative accent line */
     .section-header { margin-bottom: 16px; }
 
     .section-kicker {
@@ -474,9 +469,7 @@
       line-height: 1;
     }
 
-    .faq-item[open] summary::after {
-      content: '−';
-    }
+    .faq-item[open] summary::after { content: '−'; }
 
     .faq-item p {
       margin: 0;
@@ -509,6 +502,231 @@
       background: linear-gradient(90deg, transparent, rgba(148,163,184,0.3), transparent);
       margin: 6px 0;
     }
+
+    /* ── FINALISTEN ── */
+    .finalist-section {
+      background: linear-gradient(160deg, var(--nnp-navy) 0%, #0B2C56 100%);
+      border-radius: var(--radius-card);
+      padding: 32px 30px 30px;
+      box-shadow: 0 4px 32px rgba(2,27,58,0.18);
+      border: 1px solid rgba(255,255,255,0.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .finalist-section::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,164,184,0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .finalist-section::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: 40px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,138,31,0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .finalist-section .section-kicker {
+      color: var(--nnp-teal);
+    }
+
+    .finalist-section .section-kicker::before {
+      background: var(--nnp-teal);
+    }
+
+    .finalist-section .section-title {
+      color: #fff;
+      font-size: 1.7rem;
+    }
+
+    .finalist-intro {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin: 0 0 24px;
+      max-width: 560px;
+    }
+
+    .finalist-categories {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .finalist-cat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 20px 22px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .finalist-cat:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(0,164,184,0.35);
+    }
+
+    .finalist-cat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      color: var(--nnp-teal);
+      margin-bottom: 12px;
+    }
+
+    .finalist-names {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    @media (max-width: 640px) { .finalist-names { grid-template-columns: 1fr; } }
+
+    .finalist-names li {
+      padding: 0;
+      color: inherit;
+      font-size: inherit;
+    }
+
+    .finalist-names li::before { display: none; }
+
+    .finalist-name-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 14px 16px 15px;
+      transition: background 0.15s, border-color 0.15s, transform 0.15s;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .finalist-name-card:hover {
+      background: rgba(0,164,184,0.12);
+      border-color: rgba(0,164,184,0.35);
+      transform: translateY(-2px);
+    }
+
+    .finalist-name-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .finalist-name-type {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 600;
+      color: var(--nnp-orange);
+      margin-bottom: 4px;
+    }
+
+    .finalist-name-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.52);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* ── UITREIKING CTA ── */
+    .uitreiking-block {
+      margin-top: 24px;
+      background: rgba(255,138,31,0.1);
+      border: 1px solid rgba(255,138,31,0.25);
+      border-radius: 14px;
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .uitreiking-details {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .uitreiking-eyebrow {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      color: var(--nnp-orange);
+      margin-bottom: 2px;
+    }
+
+    .uitreiking-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: #fff;
+      margin: 0 0 8px;
+    }
+
+    .uitreiking-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+    }
+
+    .uitreiking-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .uitreiking-meta-item svg {
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    .btn-uitreiking {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--nnp-orange-deep), var(--nnp-orange));
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(255,92,0,0.32);
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      transition: transform 0.15s, box-shadow 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-uitreiking:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(255,92,0,0.40);
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -530,7 +748,7 @@
             Inzenden in vier categorieën · Eén naam per inzending · Jury stelt shortlist samen
           </p>
           <div class="hero-cta-row">
-            <a href="#inschrijven" class="btn-primary">Schrijf je naam in →</a>
+            <a href="#finalisten" class="btn-primary">Bekijk de finalisten →</a>
             <span class="hero-note">
               Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding en Horeca Naam van het Jaar.
             </span>
@@ -545,6 +763,125 @@
     </header>
 
     <main>
+
+      <!-- FINALISTEN -->
+      <section class="section" id="finalisten">
+        <div class="finalist-section">
+          <div class="section-header">
+            <div class="section-kicker">Finalisten 2026</div>
+            <h2 class="section-title">De negen namen die het ver schopten</h2>
+          </div>
+          <p class="finalist-intro">Uit alle inzendingen koos de jury negen namen die laten zien wat een goede naam kan doen. Namen die iets oproepen. Namen die blijven hangen. Namen die meer zijn dan een handig label.</p>
+
+          <div class="finalist-categories">
+
+            <div class="finalist-cat">
+              <div class="finalist-cat-label">Categorie 01 &mdash; Beste Bedrijfsnaam</div>
+              <ul class="finalist-names">
+                <li>
+                  <div class="finalist-name-card">
+                    <div class="finalist-name-title">Bralala</div>
+                    <div class="finalist-name-type">Lingerie</div>
+                    <p class="finalist-name-desc">Lingeriewinkel gespecialiseerd in BH's. Richt zich op vrouwen die blij worden van mooie lingerie — met een brede collectie en aandacht voor pasvorm.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="finalist-name-card">
+                    <div class="finalist-name-title">LAWA</div>
+                    <div class="finalist-name-type">Wandelapp</div>
+                    <p class="finalist-name-desc">App die jongvolwassenen meer aan het wandelen krijgt. Combineert het competitieve van games met het bijhouden van prestaties. LAWA staat voor Lange Wandeling — een term uit de Amsterdamse studentencultuur.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="finalist-name-card">
+                    <div class="finalist-name-title">PurSang</div>
+                    <div class="finalist-name-type">Bloedonderzoek</div>
+                    <p class="finalist-name-desc">Expertiselaboratorium voor bloedonderzoek, gericht op nauwkeurig en betrouwbaar diagnostisch onderzoek voor patiënten en zorgprofessionals.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="finalist-cat">
+              <div class="finalist-cat-label">Categorie 02 &mdash; Mooiste Merknaam</div>
+              <ul class="finalist-names">
+                <li>
+                  <div class="finalist-name-card">
+                    <div class="finalist-name-title">Heilige Boontjes</div>
+                    <div class="finalist-name-type">Koffie</div>
+                    <p class="finalist-name-desc">Sociaal koffiemerk uit Rotterdam. Eerlijk ingekochte bonen, goed betaald aan de boer. De verkoop wordt verzorgd door kwetsbare jongeren die zo een kans krijgen op de arbeidsmarkt.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="finalist-name-card">
+                    <div class="finalist-name-title">Woed</div>
+                    <div class="finalist-name-type">Houten producten</div>
+                    <p class="finalist-name-desc">Verkoopt houten en kurken accessoires, waaronder petten, zonnebrillen en armbanden. Gericht op duurzame, natuurlijke materialen.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="finalist-name-card">
+                    <div class="finalist-name-title">Mècorino</div>
+                    <div class="finalist-name-type">Schapenkaas</div>
+                    <p class="finalist-name-desc">Schapenkaas van De Vreugdehoeve, gemaakt van verse schapenmelk. Positioneert zich als een eigentijdse en toegankelijke schapenkaas.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="finalist-cat">
+              <div class="finalist-cat-label">Categorie 03 &mdash; Sterkste Rebranding</div>
+              <ul class="finalist-names">
+                <li>
+                  <div class="finalist-name-card">
+                    <div class="finalist-name-title">Now Now</div>
+                    <div class="finalist-name-type">Reisbureau Afrika</div>
+                    <p class="finalist-name-desc">Voorheen Spur Of The Moment Travel. Reizen door Afrika, op het ritme van het continent. In Zuidelijk Afrika betekent "now now" zoveel als "wanneer het zo moet zijn".</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="finalist-name-card">
+                    <div class="finalist-name-title">Powercrumbs</div>
+                    <div class="finalist-name-type">Duurzame energie</div>
+                    <p class="finalist-name-desc">Voorheen Gashouders. Vangt restgas op van waterzuiveringsinstallaties en zet dit in als alternatief voor diesel. Actief in meerdere Europese landen.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="finalist-name-card">
+                    <div class="finalist-name-title">Ommeriek</div>
+                    <div class="finalist-name-type">Onderwijs Noord-Groningen</div>
+                    <p class="finalist-name-desc">Onderwijsorganisatie ontstaan uit een fusie. De naam is geworteld in de Groningse streektaal: omme verwijst naar het Ommeland, riek betekent "rijk".</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="uitreiking-block">
+            <div class="uitreiking-details">
+              <div class="uitreiking-eyebrow">Uitreiking</div>
+              <div class="uitreiking-heading">Wie wint de Nationale Naamprijs 2026?</div>
+              <div class="uitreiking-meta">
+                <span class="uitreiking-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M5 2v2M11 2v2M2 7h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  Donderdag 25 juni
+                </span>
+                <span class="uitreiking-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M8 5.5V8.5l2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  17.00 – 19.00 uur
+                </span>
+                <span class="uitreiking-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2C5.79 2 4 3.79 4 6c0 3 4 8 4 8s4-5 4-8c0-2.21-1.79-4-4-4z" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+                  Het Wagenhuis, Breukelen
+                </span>
+              </div>
+            </div>
+            <a href="#inschrijven" class="btn-uitreiking">Meld je aan →</a>
+          </div>
+
+        </div>
+      </section>
 
       <!-- WAAROM -->
       <section class="section" id="over">
@@ -683,21 +1020,21 @@
       <section class="section" id="inschrijven">
         <div class="section-card">
           <div class="section-header">
-            <div class="section-kicker">Inschrijven</div>
-            <h2 class="section-title">Stuur jouw naam in</h2>
+            <div class="section-kicker">Aanmelden uitreiking</div>
+            <h2 class="section-title">Kom naar de uitreiking</h2>
           </div>
-          <p>Je kunt meerdere namen insturen. Gebruik per naam een apart formulier.</p>
+          <p>Op donderdag 25 juni maken we de winnaars bekend. Er is een beperkt aantal plekken beschikbaar — meld je op tijd aan.</p>
 
           <div class="cta-block">
             <div class="cta-text">
-              <h2>Klaar om in te sturen?</h2>
-              <p>Deadline: 11 mei 2026 · Deelname is gratis</p>
+              <h2>25 juni · Het Wagenhuis, Breukelen</h2>
+              <p>17.00 – 19.00 uur · Deelname is gratis</p>
             </div>
             <div class="submit-row">
               <a class="btn-primary"
                  href="https://docs.google.com/forms/d/e/1FAIpQLSd1cgaEck7-nqCfPoP0S7n0y9l9j-mMDb0vxKDOBF9RNsu0_A/viewform?usp=dialog"
                  target="_blank" rel="noopener">
-                Ga naar het inschrijfformulier →
+                Meld je aan voor de uitreiking →
               </a>
               <span class="small-note" style="color:rgba(255,255,255,0.45)">Het formulier opent in een nieuw tabblad.</span>
             </div>
@@ -760,23 +1097,15 @@
             </details>
             <details class="faq-item">
               <summary>Is er een deadline?</summary>
-              <p>Namen moeten uiterlijk 11 mei 2026 zijn ingezonden om kans te maken op een nominatie.</p>
+              <p>Namen moesten uiterlijk 11 mei 2026 zijn ingezonden om kans te maken op een nominatie. De inzendingen zijn gesloten.</p>
             </details>
             <details class="faq-item">
               <summary>Hoe werkt het selectieproces?</summary>
               <p>Inzending via het formulier. De organisatie stelt een longlist samen. De jury bepaalt de nominaties en kiest per categorie één winnaar.</p>
             </details>
             <details class="faq-item">
-              <summary>Mag ik meerdere namen inzenden?</summary>
-              <p>Ja. Je mag maximaal drie verschillende namen inzenden.</p>
-            </details>
-            <details class="faq-item">
               <summary>Wie zit er in de jury?</summary>
               <p>De jury bestaat uit namenexperts, merkjuristen, ondernemers, creatieven en marketeers. Zie de jurysectie hierboven voor de volledige samenstelling.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Mag ik een naam van een klant inzenden?</summary>
-              <p>Ja. Zolang je betrokken was bij het bedenken of ontwikkelen van de naam, mag je deze inzenden.</p>
             </details>
           </div>
         </div>

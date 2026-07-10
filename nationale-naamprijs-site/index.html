@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Nationale Naamprijs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="De Nationale Naamprijs bekroont sterke namen. Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding en Horeca Naam van het Jaar.">
+  <meta name="description" content="LAWA, Woed en Now Now winnen de Nationale Naamprijs 2026. Bekijk de winnaars, de finalisten en het juryoordeel.">
   <link rel="icon" href="/favicon/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
@@ -81,13 +81,14 @@
     .hero-badge {
       padding: 4px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.5);
+      border: 1px solid rgba(255,138,31,0.5);
       font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--nnp-muted);
-      background: #F9FAFB;
+      color: var(--nnp-orange-deep);
+      background: rgba(255,138,31,0.08);
       font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
     }
 
     .hero-title {
@@ -381,7 +382,7 @@
       line-height: 1.45;
     }
 
-    /* ── INSCHRIJVEN ── */
+    /* ── CTA BLOCK ── */
     .cta-block {
       background: linear-gradient(135deg, var(--nnp-navy) 0%, var(--nnp-navy-soft) 100%);
       border-radius: var(--radius-card);
@@ -503,7 +504,7 @@
       margin: 6px 0;
     }
 
-    /* ── FINALISTEN ── */
+    /* ── WINNAARS / FINALISTEN ── */
     .finalist-section {
       background: linear-gradient(160deg, var(--nnp-navy) 0%, #0B2C56 100%);
       border-radius: var(--radius-card);
@@ -613,12 +614,37 @@
       display: flex;
       flex-direction: column;
       gap: 4px;
+      height: 100%;
     }
 
     .finalist-name-card:hover {
       background: rgba(0,164,184,0.12);
       border-color: rgba(0,164,184,0.35);
       transform: translateY(-2px);
+    }
+
+    .finalist-name-card.winner {
+      background: rgba(255,138,31,0.12);
+      border-color: rgba(255,138,31,0.45);
+    }
+
+    .finalist-name-card.winner:hover {
+      background: rgba(255,138,31,0.18);
+      border-color: rgba(255,138,31,0.6);
+    }
+
+    .winner-badge {
+      align-self: flex-start;
+      font-size: 0.64rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, var(--nnp-orange-deep), var(--nnp-orange));
+      border-radius: 999px;
+      padding: 3px 10px 4px;
+      margin-bottom: 4px;
+      box-shadow: 0 3px 10px rgba(255,92,0,0.35);
     }
 
     .finalist-name-title {
@@ -646,7 +672,17 @@
       margin: 0;
     }
 
-    /* ── UITREIKING CTA ── */
+    .jury-quote {
+      margin: 8px 0 0;
+      padding-left: 10px;
+      border-left: 2px solid var(--nnp-orange);
+      font-size: 0.82rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.5;
+    }
+
+    /* ── TERUGBLIK ── */
     .uitreiking-block {
       margin-top: 24px;
       background: rgba(255,138,31,0.1);
@@ -738,19 +774,19 @@
         <div class="hero-main">
           <div class="hero-top-row">
             <img src="logo-nnp.svg" alt="Nationale Naamprijs logo" class="hero-logo">
-            <span class="hero-badge">Editie 2026</span>
+            <span class="hero-badge">Winnaars 2026 bekend</span>
           </div>
           <h1 class="hero-title">Nationale Naamprijs</h1>
           <p class="hero-sub">
-            De prijs voor namen die blijven hangen. Voor merken, bedrijven en horecazaken die durven kiezen.
+            De prijs voor namen die blijven hangen. Uit meer dan 100 inzendingen koos de jury drie winnaars.
           </p>
           <p class="hero-meta">
-            Inzenden in vier categorieën · Eén naam per inzending · Jury stelt shortlist samen
+            Uitgereikt op 25 juni 2026 · Het Wagenhuis, Breukelen
           </p>
           <div class="hero-cta-row">
-            <a href="#finalisten" class="btn-primary">Bekijk de finalisten →</a>
+            <a href="#winnaars" class="btn-primary">Bekijk de winnaars →</a>
             <span class="hero-note">
-              Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding en Horeca Naam van het Jaar.
+              LAWA, Woed en Now Now winnen in de categorieën Beste Bedrijfsnaam, Mooiste Merknaam en Sterkste Rebranding.
             </span>
           </div>
         </div>
@@ -764,32 +800,34 @@
 
     <main>
 
-      <!-- FINALISTEN -->
-      <section class="section" id="finalisten">
-        <div class="finalist-section">
+      <!-- WINNAARS & FINALISTEN -->
+      <section class="section" id="winnaars">
+        <div class="finalist-section" id="finalisten">
           <div class="section-header">
-            <div class="section-kicker">Finalisten 2026</div>
-            <h2 class="section-title">De negen namen die het ver schopten</h2>
+            <div class="section-kicker">Winnaars 2026</div>
+            <h2 class="section-title">LAWA, Woed en Now Now winnen de Nationale Naamprijs</h2>
           </div>
-          <p class="finalist-intro">Uit alle inzendingen koos de jury negen namen die laten zien wat een goede naam kan doen. Namen die iets oproepen. Namen die blijven hangen. Namen die meer zijn dan een handig label.</p>
+          <p class="finalist-intro">Negen finalisten, drie winnaars. Namen die iets oproepen. Namen die blijven hangen. Namen die meer zijn dan een handig label. Dit is het oordeel van de jury.</p>
 
           <div class="finalist-categories">
 
             <div class="finalist-cat">
-              <div class="finalist-cat-label">Categorie 01 &mdash; Beste Bedrijfsnaam</div>
+              <div class="finalist-cat-label">Beste Bedrijfsnaam</div>
               <ul class="finalist-names">
+                <li>
+                  <div class="finalist-name-card winner">
+                    <span class="winner-badge">Winnaar</span>
+                    <div class="finalist-name-title">LAWA</div>
+                    <div class="finalist-name-type">Wandelapp</div>
+                    <p class="finalist-name-desc">App die jongvolwassenen aan het wandelen krijgt. LAWA staat voor Lange Avond Wandeling — een term uit de Amsterdamse studentencultuur.</p>
+                    <p class="jury-quote">"Een naam die zijn eigen doelgroep selecteert is zeldzaam en moedig. LAWA is van nu, van hen, en van niemand anders."</p>
+                  </div>
+                </li>
                 <li>
                   <div class="finalist-name-card">
                     <div class="finalist-name-title">Bralala</div>
                     <div class="finalist-name-type">Lingerie</div>
                     <p class="finalist-name-desc">Lingeriewinkel gespecialiseerd in BH's. Richt zich op vrouwen die blij worden van mooie lingerie — met een brede collectie en aandacht voor pasvorm.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="finalist-name-card">
-                    <div class="finalist-name-title">LAWA</div>
-                    <div class="finalist-name-type">Wandelapp</div>
-                    <p class="finalist-name-desc">App die jongvolwassenen meer aan het wandelen krijgt. Combineert het competitieve van games met het bijhouden van prestaties. LAWA staat voor Lange Wandeling — een term uit de Amsterdamse studentencultuur.</p>
                   </div>
                 </li>
                 <li>
@@ -803,20 +841,22 @@
             </div>
 
             <div class="finalist-cat">
-              <div class="finalist-cat-label">Categorie 02 &mdash; Mooiste Merknaam</div>
+              <div class="finalist-cat-label">Mooiste Merknaam</div>
               <ul class="finalist-names">
+                <li>
+                  <div class="finalist-name-card winner">
+                    <span class="winner-badge">Winnaar</span>
+                    <div class="finalist-name-title">Woed</div>
+                    <div class="finalist-name-type">Houten producten</div>
+                    <p class="finalist-name-desc">Houten en kurken accessoires, van petten tot zonnebrillen. Een knipoog naar het Engelse "wood", maar dan met een eigen "oe".</p>
+                    <p class="jury-quote">"Zo'n naam waarvan iedereen denkt: dat had ik ook kunnen bedenken. Terwijl ze eigenlijk bedoelen: zo had ik ook willen heten."</p>
+                  </div>
+                </li>
                 <li>
                   <div class="finalist-name-card">
                     <div class="finalist-name-title">Heilige Boontjes</div>
                     <div class="finalist-name-type">Koffie</div>
                     <p class="finalist-name-desc">Sociaal koffiemerk uit Rotterdam. Eerlijk ingekochte bonen, goed betaald aan de boer. De verkoop wordt verzorgd door kwetsbare jongeren die zo een kans krijgen op de arbeidsmarkt.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="finalist-name-card">
-                    <div class="finalist-name-title">Woed</div>
-                    <div class="finalist-name-type">Houten producten</div>
-                    <p class="finalist-name-desc">Verkoopt houten en kurken accessoires, waaronder petten, zonnebrillen en armbanden. Gericht op duurzame, natuurlijke materialen.</p>
                   </div>
                 </li>
                 <li>
@@ -830,13 +870,15 @@
             </div>
 
             <div class="finalist-cat">
-              <div class="finalist-cat-label">Categorie 03 &mdash; Sterkste Rebranding</div>
+              <div class="finalist-cat-label">Sterkste Rebranding</div>
               <ul class="finalist-names">
                 <li>
-                  <div class="finalist-name-card">
+                  <div class="finalist-name-card winner">
+                    <span class="winner-badge">Winnaar</span>
                     <div class="finalist-name-title">Now Now</div>
                     <div class="finalist-name-type">Reisbureau Afrika</div>
-                    <p class="finalist-name-desc">Voorheen Spur Of The Moment Travel. Reizen door Afrika, op het ritme van het continent. In Zuidelijk Afrika betekent "now now" zoveel als "wanneer het zo moet zijn".</p>
+                    <p class="finalist-name-desc">Voorheen Spur Of The Moment Travel. Reizen door Afrika, op het ritme van het continent.</p>
+                    <p class="jury-quote">"In Zuidelijk Afrika betekent Now Now niet 'nu' en ook niet 'straks'. Het betekent 'wanneer het zo moet zijn'."</p>
                   </div>
                 </li>
                 <li>
@@ -860,24 +902,24 @@
 
           <div class="uitreiking-block">
             <div class="uitreiking-details">
-              <div class="uitreiking-eyebrow">Uitreiking</div>
-              <div class="uitreiking-heading">Wie wint de Nationale Naamprijs 2026?</div>
+              <div class="uitreiking-eyebrow">Terugblik</div>
+              <div class="uitreiking-heading">Een feestelijke uitreiking in Het Wagenhuis</div>
               <div class="uitreiking-meta">
                 <span class="uitreiking-meta-item">
                   <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M5 2v2M11 2v2M2 7h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                  Donderdag 25 juni
-                </span>
-                <span class="uitreiking-meta-item">
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M8 5.5V8.5l2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                  17.00 – 19.00 uur
+                  25 juni 2026
                 </span>
                 <span class="uitreiking-meta-item">
                   <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2C5.79 2 4 3.79 4 6c0 3 4 8 4 8s4-5 4-8c0-2.21-1.79-4-4-4z" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
                   Het Wagenhuis, Breukelen
                 </span>
+                <span class="uitreiking-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="5" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M3 13.5c0-2.5 2.2-4 5-4s5 1.5 5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  Presentatie: Nathan de Groot
+                </span>
               </div>
             </div>
-            <a href="#inschrijven" class="btn-uitreiking">Meld je aan →</a>
+            <a href="mailto:info@namarama.nl?subject=Juryrapport%20Nationale%20Naamprijs%202026" class="btn-uitreiking">Vraag het juryrapport op →</a>
           </div>
 
         </div>
@@ -891,76 +933,23 @@
             <h2 class="section-title">Namen maken het verschil</h2>
           </div>
           <p>Zonder naam ben je niks. Elke onderneming, elk product, elk voorwerp, elk mens, heeft een naam nodig. En daar mogen we best wel eens wat meer positieve aandacht aan geven.</p>
-          <p>De Nationale Naamprijs is een initiatief van naamcreatiebureau Namarama. Een onafhankelijke jury bepaalt welke namen een prijs verdienen. Meedoen is dit jaar weer geheel gratis!</p>
+          <p>De Nationale Naamprijs is een initiatief van naamcreatiebureau Namarama. Een onafhankelijke jury bepaalt welke namen een prijs verdienen. Meedoen is gratis.</p>
         </div>
       </section>
 
-      <!-- VOOR WIE -->
-      <section class="section" id="voor-wie">
-        <div class="section-card">
-          <div class="section-header">
-            <div class="section-kicker">Voor wie</div>
-            <h2 class="section-title">Ondernemers, bureaus en naam-enthousiastelingen</h2>
-          </div>
-          <p>Je kunt inzenden als ondernemer, als bureau of als jezelf omdat je ergens een toffe naam hebt gezien.</p>
-          <ul>
-            <li>Ondernemers met een naam waar ze bewust voor hebben gekozen.</li>
-            <li>Branding en designbureaus die namen maken voor klanten.</li>
-            <li>Organisaties die recent zijn gerebrand en een volgende stap hebben gezet.</li>
-            <li>Mensen zoals jij en ik die een leuke naam ergens hebben gezien.</li>
-          </ul>
-          <p class="small">Je mag eigen werk insturen of namens een opdrachtgever. Zorg dat de naam in gebruik is of concreet op de planning staat.</p>
-        </div>
-      </section>
-
-      <!-- CATEGORIEËN -->
-      <section class="section" id="categorieen">
-        <div class="section-card">
-          <div class="section-header">
-            <div class="section-kicker">Categorieën</div>
-            <h2 class="section-title">Kies één categorie per naam</h2>
-          </div>
-          <p>Kies bij je inzending één categorie. Twijfel je, kies dan waar de naam nu het meest voor wordt gebruikt.</p>
-
-          <div class="category-grid">
-            <article class="category-card">
-              <div class="category-number">Categorie 01</div>
-              <div class="category-title">Beste Bedrijfsnaam</div>
-              <p>Voor bedrijven waarvan de naam de essentie van de organisatie scherp neerzet. Herkenbaar, onderscheidend en passend bij de markt.</p>
-            </article>
-            <article class="category-card">
-              <div class="category-number">Categorie 02</div>
-              <div class="category-title">Mooiste Merknaam</div>
-              <p>Voor merknamen met een sterk eigen gezicht. Namen die een wereld oproepen en ruimte geven aan creatie en groei.</p>
-            </article>
-            <article class="category-card">
-              <div class="category-number">Categorie 03</div>
-              <div class="category-title">Sterkste Rebranding</div>
-              <p>Voor organisaties die een bestaande naam hebben vervangen en daarmee een volgende stap in hun verhaal zetten.</p>
-            </article>
-            <article class="category-card">
-              <div class="category-number">Categorie 04</div>
-              <div class="category-title">Horeca Naam van het Jaar</div>
-              <p>Voor horeca, cafés, restaurants en hotels waar de naam direct gevoel oproept en uitnodigt om binnen te stappen.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- HOE WERKT HET -->
+      <!-- HOE KWAMEN DE WINNAARS TOT STAND -->
       <section class="section" id="hoe-werkt-het">
         <div class="section-card">
           <div class="section-header">
             <div class="section-kicker">Proces</div>
-            <h2 class="section-title">Hoe het werkt</h2>
+            <h2 class="section-title">Zo kwamen de winnaars tot stand</h2>
           </div>
           <ul class="step-list">
-            <li>Je vult het formulier hieronder in en kiest één categorie.</li>
-            <li>We controleren of de inzending compleet is.</li>
-            <li>De jury maakt een shortlist per categorie.</li>
-            <li>De finalisten worden uitgenodigd voor de uitreiking.</li>
+            <li>Meer dan 100 namen werden ingezonden door ondernemers, bureaus en naam-liefhebbers.</li>
+            <li>De organisatie stelde een longlist samen uit alle complete inzendingen.</li>
+            <li>De jury koos negen finalisten, drie per categorie.</li>
+            <li>Op 25 juni werden de winnaars bekendgemaakt tijdens de uitreiking in Breukelen.</li>
           </ul>
-          <p class="small" style="margin-top:14px">Insturen betekent dat je akkoord gaat met de voorwaarden en dat we de ingezonden namen mogen tonen in communicatie over de Nationale Naamprijs.</p>
         </div>
       </section>
 
@@ -1016,25 +1005,25 @@
         </div>
       </section>
 
-      <!-- INSCHRIJVEN -->
+      <!-- VOLGENDE EDITIE -->
       <section class="section" id="inschrijven">
         <div class="section-card">
           <div class="section-header">
-            <div class="section-kicker">Aanmelden uitreiking</div>
-            <h2 class="section-title">Kom naar de uitreiking</h2>
+            <div class="section-kicker">Volgende editie</div>
+            <h2 class="section-title">Ook kans maken? Editie 2027 komt eraan</h2>
           </div>
-          <p>Op donderdag 25 juni maken we de winnaars bekend. Er is een beperkt aantal plekken beschikbaar — meld je op tijd aan.</p>
+          <p>De inzendingen voor 2026 zijn gesloten, maar de volgende editie staat al in de steigers. Heb jij een naam gezien — of bedacht — die een prijs verdient? Houd deze pagina in de gaten.</p>
 
           <div class="cta-block">
             <div class="cta-text">
-              <h2>25 juni · Het Wagenhuis, Breukelen</h2>
-              <p>17.00 – 19.00 uur · Kaarten €25</p>
+              <h2>Als eerste weten wanneer de inschrijving opent?</h2>
+              <p>Stuur een mail en je hoort het zodra het zover is.</p>
             </div>
             <div class="submit-row">
-              <a class="btn-primary" href="mailto:info@namarama.nl?subject=Aanmelding%20uitreiking%20Nationale%20Naamprijs%202026">
-                Meld je aan voor de uitreiking →
+              <a class="btn-primary" href="mailto:info@namarama.nl?subject=Houd%20mij%20op%20de%20hoogte%20%E2%80%93%20Nationale%20Naamprijs%202027">
+                Houd mij op de hoogte →
               </a>
-              <span class="small-note" style="color:rgba(255,255,255,0.45)">Stuur een mail naar info@namarama.nl</span>
+              <span class="small-note" style="color:rgba(255,255,255,0.45)">Of mail direct naar info@namarama.nl</span>
             </div>
           </div>
         </div>
@@ -1044,10 +1033,10 @@
       <section class="section" id="video">
         <div class="section-card">
           <div class="section-header">
-            <div class="section-kicker">Vorige editie</div>
+            <div class="section-kicker">Sfeerimpressie</div>
             <h2 class="section-title">Sfeer van de uitreiking</h2>
           </div>
-          <p class="small">Een indruk van de genomineerden, de zaal en de winnende namen.</p>
+          <p class="small">Een indruk van de genomineerden, de zaal en de winnende namen van editie 2025. De aftermovie van 2026 volgt binnenkort.</p>
           <div class="video-wrapper">
             <iframe width="560" height="315"
               src="https://www.youtube.com/embed/HzBBq6V7Tys?si=AjDiyvDOqTTRWsTO"
@@ -1070,8 +1059,12 @@
           </div>
           <div class="faq">
             <details class="faq-item">
+              <summary>Wie hebben de Nationale Naamprijs 2026 gewonnen?</summary>
+              <p>LAWA (Beste Bedrijfsnaam), Woed (Mooiste Merknaam) en Now Now (Sterkste Rebranding). <a href="#winnaars" style="color:var(--nnp-teal)">Bekijk de winnaars en het juryoordeel →</a></p>
+            </details>
+            <details class="faq-item">
               <summary>Wat is de Nationale Naamprijs?</summary>
-              <p>De Nationale Naamprijs is de award voor de beste namen van Nederland. In vier categorieën bekronen we creativiteit, impact en originaliteit. Een initiatief van Namarama. <a href="https://namarama.nl/artikelen/nationale-naamprijs-2025-de-winnaars/" target="_blank" rel="noopener" style="color:var(--nnp-teal)">Bekijk de winnaars van de vorige editie →</a></p>
+              <p>De Nationale Naamprijs is de award voor de beste namen van Nederland. In vier categorieën bekronen we creativiteit, impact en originaliteit. Een initiatief van Namarama. <a href="https://namarama.nl/artikelen/nationale-naamprijs-2025-de-winnaars/" target="_blank" rel="noopener" style="color:var(--nnp-teal)">Bekijk de winnaars van editie 2025 →</a></p>
             </details>
             <details class="faq-item">
               <summary>Wie kan er meedoen?</summary>
@@ -1082,10 +1075,6 @@
               <p>Beste Bedrijfsnaam, Mooiste Merknaam, Sterkste Rebranding en Horeca Naam van het Jaar.</p>
             </details>
             <details class="faq-item">
-              <summary>Wat zijn de spelregels?</summary>
-              <p>De naam moet actief zijn in Nederland en vóór 1 april 2026 publiekelijk in gebruik zijn genomen. Je mag jezelf, je klant of iemand anders nomineren. Maximaal drie inzendingen per persoon.</p>
-            </details>
-            <details class="faq-item">
               <summary>Kost deelname geld?</summary>
               <p>Nee. Deelname is volledig kosteloos.</p>
             </details>
@@ -1094,8 +1083,8 @@
               <p>Een optreden bij De Ondernemer, zichtbaarheid binnen het vakgebied, de officiële award en een promotiepakket.</p>
             </details>
             <details class="faq-item">
-              <summary>Is er een deadline?</summary>
-              <p>Namen moesten uiterlijk 11 mei 2026 zijn ingezonden om kans te maken op een nominatie. De inzendingen zijn gesloten.</p>
+              <summary>Kan ik nog inzenden?</summary>
+              <p>De inzendingen voor editie 2026 zijn gesloten. De inschrijving voor editie 2027 opent in aanloop naar de volgende ronde — mail naar info@namarama.nl en je hoort het als eerste.</p>
             </details>
             <details class="faq-item">
               <summary>Hoe werkt het selectieproces?</summary>
